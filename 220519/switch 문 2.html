@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch성적표</title>
+</head>
+<body>
+   <script>
+       'use strict'
+       let a = 10, b = 5, op, c = 0;
+       op = prompt("연산자를 선택하세요");
+
+        
+        switch(op){ //parsInt = 소숫점 버리는 역할
+            case '+':
+               c = a + b
+                document.write("더하기 선택, 값은" + c)
+            break;
+            case '-':
+                c = a - b
+                document.write("빼기 선택, 값은" + c)
+            break;
+            case '*':
+                c = a * b
+                document.write("곱하기 선택, 값은" + c)
+            break;
+            case '/':
+                c = a / b
+                document.write("나누기 선택, 값은" + c)
+            break;
+            default:
+                document.write("잘못 누르셨습니다.")
+                
+        }
+
+     
+       
+   
+   </script>
+    
+</body>
+</html>

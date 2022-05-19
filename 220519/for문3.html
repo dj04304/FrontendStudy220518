@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문3</title>
+</head>
+<body>
+    <script>
+    'use strict'
+    //구구단 출력
+    
+    
+    const dan = Number(prompt("단을 입력하세요"));//단을 입력하게함
+    document.write(`<h3>${dan}단</h3>`);
+    console.log("단을 입력받음");
+    
+   
+    let result = 0;//결과값 선언
+    console.log("구구단 결과 선언")
+
+    
+    for(let i = 0; i < 9; i++){     //구구단 i  9회 반복
+        
+        result = dan * (i + 1);     // i가 0부터 시작이기 때문에 1을 더해준후 9회 반복
+        document.write(`<p>${dan} X ${i + 1} = ${result}</p>`); // dan X i 의 값을 출력 9회 반복
+        
+    }
+    console.log("구구단의 반복문");
+
+    </script>
+
+
+</body>
+</html>

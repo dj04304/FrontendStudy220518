@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let i = 0;
+        let j = 0;  //변수 i, j 선언
+
+        while(i > 2){
+            document.write(`현재 i의 값: ${i}`); //조건이 거짓이라서 실행안됨
+        }
+        do{
+            document.write(`현재 j의 값: ${j}`); //조건이 거짓이지만, dowhile 특성상 무조건 한번은 실행됨
+        }while(j > 2);
+    </script>
+</body>
+</html>
