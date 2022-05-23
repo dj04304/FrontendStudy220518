@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 2</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        const cnt = Number(prompt(`입력받을 숫자의 개수를 입력하세요.`)); //prompt 명령 선언
+        let idx = 0;
+        let arr = []; // 변수 / 배열명 = 배열선언 -> 배열 공간 선언
+        //let arr = [100, 200, 300];
+
+        while(idx < cnt){ 
+            arr[idx] = Number(prompt(`${idx + 1}번째 숫자를 입력하세요`)); // 화면에 arr(배열)의 개수를 prompt로 출력
+
+            //조건에 대한 증가치 연산
+            idx++; //idx값 1씩 증가
+        }
+
+        for(let i = 0; i < arr.length; i++){ //i 를 배열의 크기만큼 반복
+            document.write(arr[i]); // 배열 입력한 값을 화면에 출력
+        }
+
+    </script>
+
+
+</body>
+</html>
