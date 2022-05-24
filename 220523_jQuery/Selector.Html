@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <script src="./js/jQuery.js"></script> 
+    <!-- 연결하는 방법 
+        js폴더를 따로 만들고, jQuery 사이트에서 다운로드(복사)한 후 js파일에 붙여넣고,
+        script src로 연결해준다.
+    -->
+    
+    <!-- //$(대상).메소드();
+    
+         $(이벤트의대상).이벤트메소드(function(){
+            $(변화가생길대상).메소드();
+     });
+    
+    선택자: 태그명, 스타일시트 선택자 -->
+</head>
+<body>
+   <script>
+       $(document).ready(function(){ //해당 문서의 페이지가 열렸을때
+
+        $("#main a").css({color:"red"}); //#main의 색을 red로 해줌 / #main a -> a까지 red로 해준다.
+        // $("#i01").css({backgroundColor:"blue", color:"skyblue"}); //#i01의 배경색을 blue로 해준다.
+        $("#i01 + li > a").css("color","green");
+        $(".sub").css({backgroundColor:"blue"});
+        $(".sub a").css({color:"#ccc"});
+       });
+   </script>
+    
+    <ul id="main">
+        <!-- 1번 메뉴 -->
+        <li><a href="#">menu1</a>
+            <ul class="sub">
+                    <!-- 1번 메뉴의 서브 -->
+                <li id="i01"><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 2번메뉴 -->
+        <li><a href="#">menu2</a>
+            <ul class="sub">
+                 <!-- 2번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul></li>
+        <!-- 3번메뉴 -->
+        <li><a href="#">menu3</a>
+            <ul class="sub">
+                 <!-- 3번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 4번메뉴 -->
+        <li><a href="#">menu4</a>
+            <ul class="sub">
+                 <!-- 4번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+</body>
+</html>

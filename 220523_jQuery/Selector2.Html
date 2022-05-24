@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <script src="./js/jQuery.js"></script> 
+    <!-- 연결하는 방법 
+        js폴더를 따로 만들고, jQuery 사이트에서 다운로드(복사)한 후 js파일에 붙여넣고,
+        script src로 연결해준다.
+    -->
+    
+    <!-- //$(대상).메소드();
+    
+         $(이벤트의대상).이벤트메소드(function(){
+            $(변화가생길대상).메소드();
+     });
+    
+    선택자: 태그명, 스타일시트 선택자 -->
+</head>
+<body>
+   <script>
+     $(document).ready(function(){//화면 시작할 때
+     
+
+    //짝수열(even) 홀수열(odd) 선택
+    var el = $("#el > li:even"); // li 짝수열 선언
+    var el1 = $("#el > li:odd"); // li 홀수열 선언
+    el.css({backgroundColor:"red"});// 짝수열 배경색 red
+    el1.css({backgroundColor:"blue"});// 홀수열 배경색 blue
+
+    //선언과 변수선언은 따로해줄 수도 있다.
+    // var el = $("#el > li:eq(1)")
+    // el.css({backgroundColor:"red"});
+
+        // //형제요소'중에 몇번째(시작은 0부터)
+    //  var el = $("#el > li:eq(1)").css({backgroundColor:"red"}); //eq()는 몇 번째 라는 뜻이다. ex) eq(1) = 두번째를 선택 , 시작은 0부터이다.
+  
+    //    //형제요소중 첫번째, 마지막번째 선택
+    //     var el_first = $("#el > li:first a"); //el의 first class 의 a태그 지정
+    //     var el_last = $("#el > li:last a");//el의 last class 의 a태그 지정
+    //     el_first.css({color:"red"}); //색깔을 red로 
+    //     el_last.css({color:"green"}); //색깔을 green으로
+    
+    //      //title attr 태그의 배경을 red로 해준다.
+    //     $("[title = attr]").css({backgroundColor:"red"});
+
+
+     });
+   </script>
+    
+    <ul id="main">
+        <!-- 1번 메뉴 -->
+        <li><a href="#">menu1</a>
+            <ul class="sub" title="attr">
+                    <!-- 1번 메뉴의 서브 -->
+                <li id="i01"><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 2번메뉴 -->
+        <li><a href="#">menu2</a>
+            <ul class="sub" id="el">
+                 <!-- 2번 메뉴의 서브 -->
+                <li class="first"><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li class="last"><a href="#">s_menu</a></li>
+            </ul></li>
+        <!-- 3번메뉴 -->
+        <li><a href="#">menu3</a>
+            <ul class="sub">
+                 <!-- 3번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 4번메뉴 -->
+        <li><a href="#">menu4</a>
+            <ul class="sub">
+                 <!-- 4번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+</body>
+</html>

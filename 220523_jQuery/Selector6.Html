@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <style> 
+        *{margin:0px; padding: 0px; text-decoration: none; border: 0;
+            list-style: none;
+            font-size: 30px;}
+
+        
+
+
+    </style>
+    <script src="./js/jQuery.js"></script> 
+    <!-- 연결하는 방법 
+        js폴더를 따로 만들고, jQuery 사이트에서 다운로드(복사)한 후 js파일에 붙여넣고,
+        script src로 연결해준다.
+    -->
+    
+    <!-- //$(대상).메소드();
+    
+         $(이벤트의대상).이벤트메소드(function(){
+            $(변화가생길대상).메소드();
+     });
+    
+    선택자: 태그명, 스타일시트 선택자 -->
+</head>
+<body>
+   <script>
+     $(document).ready(function(){//화면 시작할 때
+        //parent()는 부모엘리먼트를 찾아가는 것을 말한다.(해당요소의 바로한칸 위 요소를 의미)
+        //parents()는 조상엘리먼트를 찾아가는 것을 말한다.(자신을 포함한 위 요소들은 다 조상이다.(범위가 없다.))
+
+        var el = $("#wrapper #childEl").parent("ul").parent();
+        el.css("color", "red");
+
+        // var childEl = $("#childEl");
+        // var parentEl = childEl.parents(".parentEl");
+        // parentEl.css("color","red");
+
+    });
+   </script>
+    
+    <div id="wrapper">
+        <ul class="parentEl">
+            <li>1</li>
+            <li >2</li>
+            <li>3
+                <ul id="parentEl">
+                    <li>3-1</li>
+                    <li>3-2</li>
+                    <li id="childEl">3-3</li>
+                    <li>3-4</li>
+                </ul>
+            </li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

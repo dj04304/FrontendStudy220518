@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <script src="./js/jQuery.js"></script> 
+    <!-- 연결하는 방법 
+        js폴더를 따로 만들고, jQuery 사이트에서 다운로드(복사)한 후 js파일에 붙여넣고,
+        script src로 연결해준다.
+    -->
+    
+    <!-- //$(대상).메소드();
+    
+         $(이벤트의대상).이벤트메소드(function(){
+            $(변화가생길대상).메소드();
+     });
+    
+    선택자: 태그명, 스타일시트 선택자 -->
+</head>
+<body>
+   <script>
+     $(document).ready(function(){//화면 시작할 때
+     
+        //index(일련번호), eq(몇번째)
+        // var el = $("#el > li").eq(2); //eq(); 를 밖에 선언
+        // el. css({backgroundColor:"red"}); //el(el > li의 3번째)배경색을 red로 선언
+        
+        // var num = $(".first").index(); //first의 index 선언
+        // console.log(num);// console에 .first의 위치를 출력
+
+        //형제요소중 첫번째와 마지막번째
+        //$("#el > li").first().css({backgroundColor:"red"}); //el > li의 첫번째 배경색을 red로
+        //$("#el > li").last().css({backgroundColor:"green"}); //el > li의 마지막번째 배경색을 red로
+
+        // not(".el") //괄호안에있는 속성이 없는 요소만 찾기
+        // $("#main > li").not(".el").css({backgroundColor:"red"}); //class el을 제외한 나머지의 배경색을 red로 지정해줌
+
+        //filter(".el") 괄호안에있는 속성이 있는 요소만 찾기
+        // $("#main > li").filter(".el").css({backgroundColor:"green"}); // main 의 li내에서 class el의 배경색을 green으로 바꿔준다.
+
+        // each문 순환처리문 (순서대로 처리해주는 메소드)// 애니메이션 숨김기능을 쓸때없이 여러번 작용하는 것을 방지하기위해 주로 사용된다.
+        // $(".sub1 > li").each(function(){
+        //     $(this).css({backgroundColor:"red"}); //sub1의 li내 색깔을 red로 해준다.
+        // });
+
+
+            
+
+
+    });
+   </script>
+    
+    <ul id="main">
+        <!-- 1번 메뉴 -->
+        <li class="el"><a href="#">menu1</a>
+            <ul class="sub sub1" title="attr"> <!--클래스에는 하나 이상 선언해줄 수 있다. sub, sub1-->
+                    <!-- 1번 메뉴의 서브 -->
+                <li id="i01"><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 2번메뉴 -->
+        <li><a href="#">menu2</a>
+            <ul class="sub" id="el">
+                 <!-- 2번 메뉴의 서브 -->
+                <li class="first"><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li class="last"><a href="#">s_menu</a></li>
+            </ul></li>
+        <!-- 3번메뉴 -->
+        <li><a href="#">menu3</a>
+            <ul class="sub">
+                 <!-- 3번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+        <!-- 4번메뉴 -->
+        <li><a href="#">menu4</a>
+            <ul class="sub">
+                 <!-- 4번 메뉴의 서브 -->
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+</body>
+</html>
