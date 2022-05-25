@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>Click2</title>
+    <style>
+        p b{cursor: pointer;} /* 커서를 올렸을 때 손가락 모양이 나타나는 것 */ 
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("p b").dblclick(function(){ // dbl클릭(더블클릭)
+                alert("텍스트가 더블클릭 되었습니다."); //클릭시 나타나는 문구
+            });
+        });
+    </script>
+</head>
+<body>
+    <p><b>여기를 더블클릭해보세요</b></p>
+</body>
+</html>

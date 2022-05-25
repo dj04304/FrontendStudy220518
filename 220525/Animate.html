@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 150px 0 0 500px;}
+        #box{width: 150px; height: 150px; 
+            background-color: red;
+            border: 2px solid cornflowerblue;
+            position: absolute; left: 200px;}
+        input{}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".big").click(function(){
+                $("#box").delay(1000).animate({ width:"400px", height:"400px", opacity:0.6}, 1000); // $(대상).animate({속성:속성값}, 시간); 단위가 들어갈 경우 문자열로 "" 써준다.
+            });
+            $(".small").click(function(){
+                $("#box").animate({ width:"50px", height:"50px", opacity:0.2}, 600); //가로 50, 세로 50, 투명도 0.2, 0.6초 로 변하게끔 값을 줌
+            });
+            $(".left").click(function(){
+                $("#box").stop().animate({left:0},3000); //좌측 끝에 붙는다. 
+            })
+            $(".right").click(function(){
+                $("#box").stop().animate({left:"100%"}); //우측으로 100% 이동한다. stop()을 걸어두면 오른쪽에서 왼쪽으로 이동하다 다시 오른쪽으로가면 행동을 멈추고 명령을 듣는다.
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="control">
+        <input type="button" value="크고불투명하게" class="big" />
+        <input type="button" value="작고투명하게" class="small" />
+        <input type="button" value="왼쪽으로이동" class="left" />
+        <input type="button" value="오른쪽으로이동" class="right" />
+    </div>
+    
+    <div id="box"></div>
+</body>
+</html>

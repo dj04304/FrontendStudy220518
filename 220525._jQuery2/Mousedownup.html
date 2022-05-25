@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>Mousedownup</title>
+    <style>
+        p b{cursor: pointer;} /* 커서를 올렸을 때 손가락 모양이 나타나는 것 */ 
+    </style>
+    <script>
+        $(document).ready(function(){
+           //클릭은 누르고 때는 두 가지 행위로 이루어 지기 때문에 크게 mousedown과 mouseup으로 나뉜다.
+
+            $("p").mousedown(function(){ //mousedown 마우스를 눌렀을 때,
+                $(this).after('<p style = "color:red"><b>마우스버튼down</b></p>') // 눌렀을 때 "마우스 버튼 down"이라는 글귀가 생김, ' '안에 중복되면 우선순위를 정해줘야하기 때문에  ' " " ' 이런식으로 해준다. 
+            });
+           
+            $("p").mouseup(function(){  //mouseup 마우스를 땠을 때,
+                $(this).after('<p style = "color:green"><b>마우스버튼up</b></p>')// 땠을 때 "마우스 버튼 up"이라는 글귀가 생김
+            });  
+        });
+    </script>
+</head>
+<body>
+    <p><b>여기를 눌러보세요</b></p>
+   
+</body>
+</html>

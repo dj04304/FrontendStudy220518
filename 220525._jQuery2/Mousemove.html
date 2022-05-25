@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>Mousemove</title>
+    <style>
+        p b{cursor: pointer;} /* 커서를 올렸을 때 손가락 모양이 나타나는 것 */ 
+    </style>
+    <script>
+        //마우스 커서를 그냥 움직이는 것을 mousemove라고 한다.
+        $(document).ready(function(){
+          $(document).mousemove(function(event){ // mousemove 의 기능에 매개변수로 event를 준다.
+            $("span").text(event.pageX + "." + event.pageY); //텍스트로 X좌표와 Y좌표를 보내준다.
+          });
+        });
+    </script>
+</head>
+<body>
+    <!-- span은 단어 하나 넣는 태그이다. -->
+    <p>마우스 좌표는 : <span></span>.</p>
+</body>
+
+</html>

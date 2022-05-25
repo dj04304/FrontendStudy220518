@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate_1</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .box{width: 150px; height: 150px; 
+            background-color: red;
+            border: 2px solid cornflowerblue;
+            position: absolute; left: 10px;}
+        #box1{top: 0px;}
+        #box2{top: 150px;}
+        #box3{top: 300px;}
+        #box4{top: 450px;}
+        #box5{top: 600px;}
+    </style>
+    <script>
+        $(document).ready(function(){
+           $("#box1").css({left:"50px"}).delay(100).animate({left:"1000px"},
+            function(){
+                $("#box2").css({left:"100px"}).delay(200).animate({left:"1000px"},
+                function(){
+                    $("#box3").css({left:"150px"}).delay(300).animate({left:"1000px"},  
+                    function(){
+                        $("#box4").css({left:"200px"}).delay(400).animate({left:"1000px"});
+                    }); 
+                });  
+            }); //, 넣어주고 안에 function 및 기능을 그대로 넣어줄 수 있다.
+          
+           
+           
+           
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="box1" class = "box">box1</div>
+    <div id="box2" class = "box">box2</div>
+    <div id="box3" class = "box">box3</div>
+    <div id="box4" class = "box">box4</div>
+    <div id="box5" class = "box">box5</div>
+
+</body>
+</html>

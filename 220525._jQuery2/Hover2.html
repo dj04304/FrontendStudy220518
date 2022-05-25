@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>Hover2</title>
+    <style>
+        p b{cursor: pointer;} /* 커서를 올렸을 때 손가락 모양이 나타나는 것 */ 
+    </style>
+    <script>
+        $(document).ready(function(){
+           $("p").hover(
+               function(){},
+               function(){}
+               );
+
+            //hover의 기능을 두개로 나눠준다. 메뉴의 풀다운 기능을 줄 때 주로 사용된다.
+            $(".btn1").mouseover(function(){ //마우스 커서를 올렸을 때
+                $("div").css({backgroundColor:"#ccc"}); // 회색으로 배경이 바뀜
+            });
+            $(".btn2").mouseout(function(){ //마우스 커서를 내렸을 때
+                $("div").css({backgroundColor:"#fff"});  //흰색으로 배경이 바뀜
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="width: 300px; height: 300px; background-color: cornflowerblue;"></div>
+    <p class="btn1"><b>여기에 마우스를 올려보세요</b></p>
+    <p class="btn2"><b>여기에 마우스를 올렸다가 나가보세요</b></p>
+    
+</body>
+</html>

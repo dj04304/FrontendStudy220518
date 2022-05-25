@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>MouseenterLeave</title>
+    <style>
+        p b{cursor: pointer;} /* 커서를 올렸을 때 손가락 모양이 나타나는 것 */ 
+    </style>
+    <script>
+       //mouseenter mouseleave는 영역으로 생각하면 된다. 영역에 들어갔다가 나오는 것을 말한다.
+        $(document).ready(function(){
+            $("p").mouseenter(function(){ //mouseover와 비슷함
+                $(this).css({backgroundColor:"red"});
+            });
+            $("p").mouseleave(function(){ //mouseout과 비슷함
+                $(this).css({backgroundColor:"green"});
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <p><b>mouse pointer를 여기에 대보세요</b></p>
+
+</body>
+
+</html>
