@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu2</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+
+        #nav{width: 500px; height: 60px; margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;}
+        #nav > ul{width: 500px; height: 30px;
+                border-bottom: 1px solid #ccc;}
+        #nav > ul >li{float: left; border: 1px solid #ccc; 
+                    width: 100px; height: 30px;
+                    box-sizing: border-box;}
+        #nav > ul > li:last-child{border-right: 0;}
+        #nav > ul > li > a{ display: block; height: 30px; 
+                    text-align: center; line-height: 30px;}
+        #nav .sub{/*display: flex;
+                flex-direction: row;
+                justify-content: space-around;*/
+                position: absolute;
+                left: 0; top: 31px;
+                width: 500px; background-color: cornflowerblue;}
+        #nav .sub1{background-color: aqua;}
+        #nav .sub2{background-color: red;}
+        #nav .sub3{background-color: blue;}
+        #nav .sub4{background-color: blueviolet;}
+        #nav .sub5{background-color: bisque;}
+        
+        #nav .sub li{float: left; width: 100px;
+            height: 30px; border-bottom: 1px solid #ccc;}
+        #nav .sub li a{display: block;
+                    text-align: center;
+                    line-height: 30px;}
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            //초기상태
+           //$(".sub").css({display:"none"}); //서브메뉴 숨겨주는 기능
+            
+            $(".main > li").click(function(){ //이벤트가 적용되는 대상(main 안의 li) 중에서 this
+                // $(".sub").css({display:"none"});// 다 숨기기 때문에 메모리가 비효율적이다
+                //순환처리문
+                $(".sub").each(function(){ //each 순환처리문 사용
+                    if($(this).css("display") == "block"){ //sub 내에 적용 
+                        $(this).css({display:"none"}); // 지금 보여주고 있는걸 숨겨준다
+                    }
+                });
+
+               var i = $(this).index();  //0.5초 딜레이를 주고 서브메뉴가 서서히 나타난다.
+               $(".sub").eq(i).css({display:"block"});
+               
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!-- 메뉴 -->
+    <div id="nav">
+        <ul class="main">
+            <li><a href="#">menu</a>
+                <!-- 서브메뉴1 -->   
+            
+            </li>
+                <!-- 서브메뉴2 -->
+            <li><a href="#">menu</a>
+                
+            </li>
+                <!-- 서브메뉴3 -->
+            <li><a href="#">menu</a>
+                
+            </li>
+                <!-- 서브메뉴4 -->
+            <li><a href="#">menu</a>
+                
+            </li>
+                <!-- 서브메뉴5 -->
+            <li><a href="#">menu</a>
+               
+            </li>
+        </ul>
+
+        <!-- 서브메뉴 1을 밖으로 뺴줌 -->
+        <ul class="sub sub1"> 
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+
+        <!-- 서브메뉴 1을 밖으로 뺴줌 -->
+        <ul class="sub sub2">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        
+        <!-- 서브메뉴 1을 밖으로 뺴줌 -->
+        <ul class="sub sub3">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <!-- 서브메뉴 1을 밖으로 뺴줌 -->
+        <ul class="sub sub4">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <!-- 서브메뉴 1을 밖으로 뺴줌 -->
+        <ul class="sub sub5">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </div>
+        
+</body>
+</html>

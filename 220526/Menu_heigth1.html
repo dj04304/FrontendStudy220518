@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu1</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+
+        #nav{width: 100px; margin: 100px;
+            border: 1px solid #ccc;}
+        #nav > ul >li{ border-bottom: 1px solid #ccc; 
+                    width: 100px;
+                    box-sizing: border-box;}
+        #nav > ul > li:last-child{border-bottom: 0;}
+        #nav > ul > li > a{ display: block; height: 30px; 
+                    text-align: center; line-height: 30px;}
+        #nav .sub{ width: 100%; background-color: cornflowerblue;}
+        #nav .sub li{height: 30px; border-bottom: 1px solid #ccc;}
+        #nav .sub li a{display: block;
+                    text-align: center;
+                    line-height: 30px;}
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            //초기상태
+            $(".sub").css({display:"none"}); //서브메뉴 숨겨주는 기능
+            
+            // $(".btn").click(function(){
+            // //   $(".sub").css({display:"none"});
+            // $(".sub").each(function(){
+            //     if($(this).css("display") == "block"){
+            //         $(this).slideUp();
+            //     }
+            // });
+            //     var submn =  $(this).next(".sub"); // btn클릭시 다음에 나오는 (sub)것을 submn에 담아줌
+            //   submn.slideDown(700);
+            // });
+
+            $(".main > li").hover( //마우스를 가져다 댔을 때.
+                function(){
+                    $(this).next(".sub").slideDown(700); //다음 서브메뉴를 slideDown해준다.
+                    
+                },
+                function(){
+                    $(this).next(".sub").slideUp(); //나머지 메뉴를 slideUp 해준다.
+                }
+            )
+            
+
+        });
+    </script>
+</head>
+<body>
+    <!-- 메뉴 -->
+    <div id="nav">
+        <ul class="main">
+            <li><a href="#" class="btn">menu</a>
+                <!-- 서브메뉴1 -->
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul>
+            </li>
+                <!-- 서브메뉴2 -->
+            <li><a href="#" class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul>
+            </li>
+                <!-- 서브메뉴3 -->
+            <li><a href="#" class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul>
+            </li>
+                <!-- 서브메뉴4 -->
+            <li><a href="#" class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul>
+            </li>
+                <!-- 서브메뉴5 -->
+            <li><a href="#" class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

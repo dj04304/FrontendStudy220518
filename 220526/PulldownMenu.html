@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulldownMenu</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+           
+        #header{width: 100%; height: 120px; padding-top: 60px;
+                background-color: burlywood;
+                box-sizing: border-box;}
+        #header .nav{margin: 0 auto; 
+                    width: 1200px; height: 50px;
+                    background-color: antiquewhite;}
+        #header .nav ul{}
+        #header .nav > ul > li{float: left;  width: 240px; height: 50px;}
+        #header .nav > ul > li > a{display: block; text-align: center;
+                                    height: 50px;
+                                    background-color: transparent;}
+        #header .nav > ul > li > a.on{background-color: brown; /* a.on 에서  a .on처럼 때면 안된다.*/
+                                    color: #fff;}
+        #header .nav > ul > li > a > span{display: block; font-size: 10px;
+                                        display: none;}
+        #header .submn_area{width: 100%; height: 0;
+                            background-color: brown;
+                            position: absolute; top: 120px; left: 0;
+                            z-index: 100;} 
+        #main_img{width: 100%; height: 350px;
+                background-color: cornflowerblue;
+                }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //초기상태
+            $(".submn_area").css({display:"none"});
+            //$(".submn_area").hide(); // 둘 중 하나로 해도 된다. 
+
+            $(".nav").mouseover(function(){ //nav에 마우스를 올렸을 때
+                // $(".submn_area").slideDown(500);
+                $(".submn_area").stop().show().animate({height: "350px"}, 800);
+                });
+            
+            $(".nav a").hover(function(){ //마우스 올렸을 때 떗을때 따로 지정해줌
+                //$(this).css({backgroundColor:"green"}); 
+                $(this).addClass("on"); //addClass해서 마우스를 올렸을 때 색깔 나타나기
+                $(this).find("span").css({display:"block"});//span태그의 글자가 나타남
+            },
+                function(){
+                    $(".nav a").removeClass("on"); //removeClass해서 마우스를 땠을 때 색깔 사라지기
+                    $(this).find("span").css({display:"none"});//span태그의 글자가 사라짐
+            });
+
+            
+            $(".submn_area").mouseout(function(){ //메뉴에서 마우스가 나갔을 때
+               // $(".submn_area").slideUp(500);
+               $(".submn_area").stop().animate({height:"0px"} , 800);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!-- 헤더 -->
+   <div id="header">
+       <!-- 헤더 안의 메뉴 -->
+       <div class="nav">
+           <ul>
+               <li><a href="#">menu<span>sub</span></a></li>
+               <li><a href="#">menu<span>sub</span></a></li>
+               <li><a href="#">menu<span>sub</span></a></li>
+               <li><a href="#">menu<span>sub</span></a></li>
+               <li><a href="#">menu<span>sub</span></a></li>
+           </ul>
+       </div>
+       <div class="submn_area"></div>
+   </div>
+   <!-- 메인 이미지 -->
+   <div id="main_img"></div>
+   
+
+</body>
+</html>
