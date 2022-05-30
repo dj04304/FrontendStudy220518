@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PositionAndOffset</title>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <!-- style -->
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrapper{ width: 500px; height: 500px;
+                border: 5px solid blue;
+                font-size: 20px;
+                position: absolute; top: 100px; left: 100px;}
+        #box{width: 100px; height: 100px;
+            background-color: dodgerblue; color: azure;}
+    </style>
+    <!-- script -->
+    <script>
+        $(document).ready(function(){
+        //    offset 은 css의 position: absolute 이고 (전체 기준), position은 css의 position:relative(상속받은 기준) 이다.
+            $("#box").draggable({
+                drag:function(){
+                    $("#info").find(".ol").text($("#box").offset().left);
+                    $("#info").find(".ot").text($("#box").offset().top);
+                    $("#info").find(".pl").text($("#box").position().left);
+                    $("#info").find(".pt").text($("#box").position().top);
+                }
+            });
+
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="info">
+       <p><span>offset().left = </span><span class="ol">0</span></p>
+       <p><span>offset().top = </span><span class="ot">0</span></p>
+       <p><span>position().left = </span><span class="pl">0</span></p>
+       <p><span>position().top = </span><span class="pt">0</span></p>
+    </div>
+    <div id="wrapper">
+        <div id="box">box</div>
+    </div>
+</body>
+</html>

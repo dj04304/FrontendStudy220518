@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>widthAndHeight</title>
+    <script src="./js/jQuery.js"></script>
+    <!-- style -->
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrapper{ height: 100vw;
+                border: 5px solid blue;
+                padding: 30px; margin: 20px;
+                font-size: 20px;
+            }
+    </style>
+    <!-- script -->
+    <script>
+        $(document).ready(function(){
+            // $(window) -> 웹브라우저, 창 //  $(document, html) -> 현재 웹브라우저에 실행된 HTML 문서
+            // $(scroll) -> 웹 브라우저에서 발생하는 스크롤을 의미
+            // $(this) -> 현재 실행되는 함수 내에서 이벤트가 발생된 요소
+            
+            //resize -> 화면 크기가 바뀔 때
+            $(window).resize(function(){
+                $("#width").text($("#wrapper").width());
+                $("#height").text($("#wrapper").height());
+                // innerWidth, innerHeight 는 padding값을 포함한 값 / outerWidth, outerHeight는 margin값을 포함한 값이다.
+                $("#innerwidth").text($("#wrapper").innerWidth());
+                $("#innerheight").text($("#wrapper").innerHeight());
+                $("#outerWidth").text($("#wrapper").outerWidth());
+                $("#outerHeight").text($("#wrapper").outerHeight());
+            });
+            //연산도 가능하다. 
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+       <p><span>박스의 width = </span><span id="width">0</span></p>
+       <p><span>박스의 height = </span><span id="height">0</span></p>
+       <p><span>(padding값을 포함한)박스의 innerWidth = </span><span id="innerwidth">0</span></p>
+       <p><span>(padding값을 포함한)박스의 innerHeight = </span><span id="innerheight">0</span></p>
+       <p><span>(margin값을 포함한)박스의 outerWidth = </span><span id="outerWidth">0</span></p>
+       <p><span>(margin값을 포함한)박스의 outerHeight = </span><span id="outerHeight">0</span></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery2</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+        #slide{ margin: 0 auto; margin-top: 100px;
+            width: 600px; height: 350px;
+            border: 2px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .group{ margin: 0 auto;
+            width: 600px;
+            padding: 10px;
+        }
+        
+        .group a{ background-color: #fff; padding: 3px 6px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .group a:hover{
+            background-color: #ccc; color: #fff;
+        }
+
+        #view{height: 350px; position: relative;}
+        
+        #view img{position: absolute;
+            z-index: -9999;
+        }
+        
+        #view img.img1{
+            top: 0; left: 0;
+
+        }
+        #view img.img2{
+            top: 0; left: 600px;
+
+        }
+        #view img.img3{
+            top: 0; left: 1200px;
+
+        }
+        #view img.img4{
+            top: 0; left: 1800px;
+
+        }
+
+        #btns{ position: absolute;
+            right: 10px; bottom: 10px;
+
+        }
+        
+        #btns li{
+            float: left;
+            width: 15px; height: 15px;
+            background-color: #fff;
+            margin-right: 10px;
+            line-height: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #btns li.on{ background-color: rgb(74, 21, 21); color: #fff;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <div id="view">
+            <img src="../images/slide1.jpg" alt="" class="img1">
+            <img src="../images/slide2.jpg" alt="" class="img2">
+            <img src="../images/slide3.jpg" alt="" class="img3">
+            <img src="../images/slide4.jpg" alt="" class="img4">
+        </div>
+        <ul id="btns">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div class="group">
+    <a href="#" class="l_btn">left</a>
+    <a href="#" class="r_btn">right</a>
+    </div>
+    <script>
+        // $(document).ready -> head위에 있을때는 무조건 써줘야한다.
+        $(document).ready(function(){
+            $("#btns li").eq(0).addClass("on");
+            var cnt = 0; //버튼의 초기값을 전역변수로 선언
+            //초기값으로 첫번째 버튼에 스타일 적용
+            $("#btns li").click(function(){
+                $("#btns li").removeClass("on");
+                var i = $(this).index();
+                slideAnimation(cnt);
+    
+                //$(대상).css({속성:"속성값", 속성:"속성값"});
+                //$(대상).addClass("선택자"); -> 미리 스타일을 선언하는 경우
+            });
+    
+            $(".l_btn").click(function(e){
+                e.preventDefault(); //a 태그의 이벤트를 초기화한다.
+                if(cnt > 0){ // cnt 가 -값이 되면 안되기 떄문에 0 값을 준다.
+                    cnt = cnt - 1; //좌측으로 가기 때문에 - 값이 된다.
+                    console.log(cnt);
+                    $("#btns li").removeClass("on");
+                    slideAnimation(cnt);
+                }
+            });
+            $(".r_btn").click(function(e){
+                e.preventDefault(); //a 태그의 이벤트를 초기화한다.
+                if(cnt < 3){ // cnt 가 0 1 2 까지만 올라가야 되기 때문에 
+                cnt = cnt + 1; //좌측의 반대이기 때문에 + 값이 된다.
+                console.log(cnt);
+                $("#btns li").removeClass("on");
+                slideAnimation(cnt);
+                }
+                
+            });
+
+            function slideAnimation(n){
+                
+                var sl = n * (-600) + "px";
+                $("#view").animate({left:sl},function(){
+                    $("#btns li").eq(n).addClass("on");
+                });
+    
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <!-- style -->
+    <style>
+        *{margin: 0; padding: 0;}
+      body{ width: 5000px; height: 5000px;
+      }
+      #info{ position: fixed; top: 0; left: 0;
+
+      }
+    </style>
+    <!-- script -->
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                //scroll 이 내려감에 따라 좌표가 변화하는걸 볼 수 있다.
+               var sl = $(window).scrollLeft();
+               var st = $(window).scrollTop();
+
+               $(".scrollLeft").text(sl);
+               $(".scrollTop").text(st);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="info">
+        <p><span>scrollLeft = </span><span class="scrollLeft">0</span></p>
+        <p><span>scrollTop = </span><span class="scrollTop">0</span></p>
+    </div>
+</body>
+</html>

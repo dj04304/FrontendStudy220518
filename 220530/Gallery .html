@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jQuery.js"></script>
+    <title>Gallery</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+
+        #slide{ margin: 0 auto; margin-top: 100px;
+            width: 600px; height: 350px;
+            border: 1px  solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #viewer{ height: 350px; position: relative;
+
+        }
+        #viewer img{position: absolute;
+                z-index: -9999; 
+
+        }
+        #viewer img.img1{
+            top: 0; left: 0;
+        }
+        #viewer img.img2{
+            top: 0; left: 600px;
+        }
+        #viewer img.img3{
+            top: 0; left: 1200px;
+        }
+        #viewer img.img4{
+            top: 0; left: 1800px;
+        }
+
+        #btns{ position: absolute; right: 10px; bottom: 10px;
+            
+        }
+
+        #btns li{
+            float: left; margin-right: 10px;
+            width: 16px; height: 16px;
+            background-color: chocolate;
+            line-height: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <div id="viewer">
+            <img src="../images/slide1.jpg" alt="" class="img1">
+            <img src="../images/slide2.jpg" alt="" class="img2">
+            <img src="../images/slide3.jpg" alt="" class="img3">
+            <img src="../images/slide4.jpg" alt="" class="img4">
+        </div>
+        <ul id="btns">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <script>
+        $("#btns li").click(function(){
+            //index 값을 i에 담아준다.
+          var i = $(this).index();
+            // console.log(i);
+          slideTarget(i);
+            
+        });
+        //i값을 n에 전달
+        function slideTarget(n){
+
+            //pos 변수에 left 값에 n을 곱해서 줌
+            var pos = n * (-600) + "px";
+            //left:pos 는 position을 설정하지 않으면 움직이지않는다.
+            $("#viewer").animate({left:pos});
+        }
+    </script>
+</body>
+</html>
