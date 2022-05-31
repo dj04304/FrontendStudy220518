@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clone</title>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        #wrapper{ border: 1px solid blue; padding: 20px; margin: 20px; font-size: 20px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+          var el = $("#wrap > ul > li:eq(2) > ul");
+          var cloneEl = $("#list2 > li").clone(); //list2 의 li를 복제
+          $(list).append(cloneEl); //복제한 내용을 list에 append해준다.
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3
+                <ul id="list">
+                    
+                </ul>
+            </li>
+            <li>4</li>
+        </ul>
+        <ul id="list2"> 
+           <li>3-0</li>
+           <li>3-1</li>
+           <li>3-2</li>
+           <li>3-3</li>
+           <li>3-4</li>
+           <li>3-5</li>
+        </ul>
+    </div>
+</body>
+</html>

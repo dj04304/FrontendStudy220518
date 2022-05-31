@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_text</title>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <!-- style -->
+    <style>
+        #wrapper{ border: 1px solid blue; padding: 20px; margin: 20px; font-size: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){  // $(function(){ "코드 입력" }) 최근에는 이렇게도 쓰인다.
+            //$("#wrapper").html($("#hidden").html()); // hidden 의 내용을 가져와서 wrapper 에 담아준다.
+            $("#wrapper").text($("#hidden").text()); // hidden의 text를 가져온다.
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <span>이 곳의 내용을 바꿔주세요.</span>
+    </div>
+    <div id="hidden">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>     
+</html>

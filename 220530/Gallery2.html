@@ -113,8 +113,12 @@
             $(".l_btn").click(function(e){
                 e.preventDefault(); //a 태그의 이벤트를 초기화한다.
                 if(cnt > 0){ // cnt 가 -값이 되면 안되기 떄문에 0 값을 준다.
-                    cnt = cnt - 1; //좌측으로 가기 때문에 - 값이 된다.
+                cnt--; //좌측으로 가기 때문에 - 값이 된다.
                     console.log(cnt);
+                    $("#btns li").removeClass("on");
+                    slideAnimation(cnt);
+                }else{
+                    cnt = 3;
                     $("#btns li").removeClass("on");
                     slideAnimation(cnt);
                 }
@@ -122,17 +126,23 @@
             $(".r_btn").click(function(e){
                 e.preventDefault(); //a 태그의 이벤트를 초기화한다.
                 if(cnt < 3){ // cnt 가 0 1 2 까지만 올라가야 되기 때문에 
-                cnt = cnt + 1; //좌측의 반대이기 때문에 + 값이 된다.
+                // cnt = cnt + 1; //좌측의 반대이기 때문에 + 값이 된다.
+                cnt++;
                 console.log(cnt);
                 $("#btns li").removeClass("on");
                 slideAnimation(cnt);
+                 
+                }else{
+                    cnt = 0;
+                    $("#btns li").removeClass("on");
+                    slideAnimation(cnt);
                 }
                 
             });
 
             function slideAnimation(n){
-                
                 var sl = n * (-600) + "px";
+                cnt = n;
                 $("#view").animate({left:sl},function(){
                     $("#btns li").eq(n).addClass("on");
                 });

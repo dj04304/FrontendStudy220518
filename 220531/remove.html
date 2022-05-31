@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove</title>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        #wrapper{ border: 1px solid blue; padding: 20px; margin: 20px; font-size: 20px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+          var el = $("#wrap > ul > li:eq(2) > ul");
+          $(".newEl1").remove(); //  el의 맨 앞에 추가된 newEl1 클래스를 제거
+         $(".newEl2").remove(); // el안에 추가된 newEl2 클래스를 제거
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3
+                <ul>
+                    <!-- <li>3-0 추가 예정</li> -->
+                    <li>3-1</li>
+                    <li>3-2</li>
+                    <li>3-3</li>
+                    <li>3-4</li>
+                    <!-- <li>3-5를 추가해줄 예정</li> -->
+                </ul>
+            </li>
+            <li>4</li>
+        </ul>
+        <li class="newEl1">3-0</li>
+        <li class="newEl2">3-5</li>
+    </div>
+</body>
+</html>

@@ -12,11 +12,30 @@
         a{text-decoration: none;}
         img{border: 0;}
 
-        #slide{ margin: 0 auto; margin-top: 50px;
+        #slide{ margin: 0 auto; margin-top: 100px;
             width: 600px; height: 350px;
             border: 2px solid #000;
             position: relative;
             overflow: hidden;
+        }
+
+        .group{ position: absolute;
+            top: 350px; left: 500px;
+           
+
+        }
+
+        .group a{ display: flex;
+            background-color: #fff; 
+            padding: 3px 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            
+        }
+
+        .group a:hover{
+            background-color: #ccc; color: #fff;
         }
 
         #view{ width: 600px;
@@ -55,6 +74,9 @@
             text-align: center;
             cursor: pointer;
         }
+        #btns li.on{
+            background-color: antiquewhite; color: #000;
+        }
     </style>
 </head>
 <body>
@@ -72,18 +94,56 @@
             <li>4</li>
         </ul>
     </div>
+    <div class="group">
+        <a href="#" class="t_btn">top</a>
+        <a href="#" class="b_btn">bottom</a>
+    </div>
     <script>
-        $("#btns li").click(function(){
-           var i = $(this).index();
-            slideAnimation(i)
-        });
-
-        function slideAnimation(n){
+        $(document).ready(function(){
+            $("#btns li").eq(0).addClass("on"); // 0번째 class on 지정
+            var num = 0;
+            $("#btns li").click(function(){ //btns li 클릭시
+                $("#btns li").removeClass("on"); //on class  제거
+                var i = $(this).index(); // i 에 index값 추가
+                slideAnimation(i) // slideAnimation 변수에 i 담기
+            });
             
-            var sl = n * (-350) + "px";
-            $("#view").animate({top:sl});
+            $(".t_btn").click(function(e){
+                e.preventDefault();
+                if(num > 0){
+                    num = num - 1;
+                    console.log(num);
+                    $("#btns li").removeClass("on");
+                    slideAnimation(num);
+                }else{
+                    num = 3;
+                    $("#btns li").removeClass("on");
+                    slideAnimation(num);
+                }
+            });
 
-        }
+            $(".b_btn").click(function(e){
+                e.preventDefault();
+                if(num < 3){
+                    num = num + 1;
+                    console.log(num);
+                    $("#btns li").removeClass("on");
+                    slideAnimation(num);
+                }else{
+                    num = 0;
+                    $("#btns li").removeClass("on");
+                    slideAnimation(num);
+                }
+
+            });
+
+            function slideAnimation(n){ //slideAnimation i값을 n으로 받음
+                var sl = n * (-350) + "px"; //받은 값에 -350px 값을 n값에 곱해줌(n값 만큼 내려가야하기때문)
+                $("#view").animate({top:sl}, function(){
+                    $("#btns li").eq(n).addClass("on");
+            });
+            }
+        });
     </script>
 </body>
 </html>

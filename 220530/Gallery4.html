@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery4</title>
+    <script src="./js/jQuery.js"></script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+        img{border: 0;}
+        body{
+            background-color: #192839;
+        }
+
+        #box{margin: 0 auto; width: 620px;
+            margin-top: 100px; 
+            display: flex;
+            justify-content: space-around;}
+        
+        .s_img{width: 100px;
+        }
+        .s_img img{
+            margin-bottom: 3px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .s_img img:hover{
+            border: 1px solid #ef4018;
+        }
+
+        .l_img{ padding: 5px;
+                width: 500px;
+                height: 280px;
+                border: 1px solid #ccc;
+        }
+        .caption{position: relative;
+            padding: 10px;
+            font-size: 12px; color: #fff;
+            border: 1px solid #ccc;
+            background-color: cornflowerblue;  
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            //a 태그의 이미지를 넣었을 때, 해당되는 이미지를 대입시켜 바꿔치기하는 방식이다.
+            $(".s_img em").hide(); //em을 숨겨준다.
+            $(".s_img a").click(function(e){
+                e.preventDefault(); //a 태그의 href 이벤트를 초기화한다.(사진 클릭시 사진으로 이동하기 떄문)
+              var path = $(this).attr("href"); // (특정 요소의 속성값을 지정하는 법) path변수에 클릭했을 때 하이퍼링크(href)로 이동한다는 이벤트 값을 담는다.
+              console.log("path: " + path); //console 창에 경로 출력
+              
+              if($(".caption")){ // 이전의 caption을 삭제해준다. (이전 캡션이 나타났을 때, remove해줌.) 
+                  $(".caption").remove();
+              }
+
+              if(path != $(".l_img img").attr("src")){ //this 는 s_img a 를 가리키고 있기 때문에 s_img a와  l_img img 가 다를 때 실행하는 조건문이다. 이유: 같은 사진을 클릭했을 때는 이벤트를 실행시키고 싶지 않기 때문이다.
+                    $(".l_img img").attr({src:path}); // (특정 요소의 속성값을 지정하는 법) 큰 이미지의 속성이 path경로에 있는 곳으로 간다.
+                    $(".l_img img").css({opacity:0}).stop().animate({opacity:1},1000); // 이미지 바뀔때 마다 1초동안 투명도가 0에서 1로 올라옴
+              }
+              //태그에 들어갈 텍스트를 가져오기
+             var msg = $(this).next("em").text();   //통째로 가져오고 싶으면 text자리에 html을 넣는다.
+              console.log("msg: " + msg); // 콘솔에 출력
+              $(".l_img").append("<div class = 'caption'></div>"); // 태그 추가
+              $(".l_img .caption").text(msg); //l_img에 caption안에있는 태그 텍스트를 넣겠다.
+
+              var posy = $(".l_img .caption").height() + 27; //높이의 길이가 일정하지 않기 때문에 caption.height로 잡아준다.(caption의 값이 position relative기 떄문에 가능)
+              $(".l_img .caption").animate({top: "-=" + posy + "px"},300);// top값은 글자의 길이 크기마다 바뀌기 때문에 변수에 담아준다.
+             //posy 값과 posy의 값을 빼줘야 높이값이 위로 올라오기 때문이다.
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div class="s_img">
+            <a href="../images/pic1.jpg" title="image1"><img src="../images/th_pic1.jpg" /></a>
+            <em>Lorem Ipsum is simply dummy text of the pdrinting and typesetting industry.</em>
+            
+            <a href="../images/pic2.jpg" title="image2"><img src="../images/th_pic2.jpg" /></a>
+            <em>Lorem Ipsum is simply dummy tely dummy thely dummy tegxt of thely try. Sed facilisis, sem a luctus bibendum, dui risus pellentesque velit, quis tempor magna sem vel justo. Etiam eget ipsum ante.</em>
+            
+            <a href="../images/pic3.jpg" title="image3"><img src="../images/th_pic3.jpg" /></a>
+            <em>Lorem Ipsum is simply dummy.</em>
+        </div>
+        <div class="l_img">
+            <img src="../images/pic1.jpg" alt="image1">
+            <div class="caption">태그추가</div>
+        </div>
+    </div>
+</body>
+</html>
