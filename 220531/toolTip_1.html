@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title> ToolTip 도움말 효과 </title>
+	<title>ToolTip_1</title>
 	<script src="./js/jquery-ui.js"></script>
 	<script src="./js/jQuery.js"></script>
 
@@ -35,7 +35,7 @@
 	</head>
 
 	<body>
-		<!-- 추가 -->
+		<!-- tip 추가 -->
 			<div>
 				<p>
 				There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
@@ -47,6 +47,7 @@
 				Contrary to popular belief, <a href="http://www.lipsum.com/" title="img/site.jpg" class="img">Lorem Ipsum</a> is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
 				</p>
 			</div> 
+			
 	<!------------------------ jQuery 코드 ----------------------->
 	<script>
 		/*
@@ -58,37 +59,40 @@
 		var type;//툴팁에 들어갈 내용에 타입을 설정하는 속성값
 
 
-		$("a").hover(
-			//각각 해당하는 요소에서 속성 가져오기
-			function(){
-				tempTitle = $(this).attr("title"); //html title을 가져와서 a태그에 넣어줌
-				console.log(tempTitle)
-				type = $(this).attr("class");
-				console.log(type);
+	$("a").hover(function(){
+		//각각에 해당되는 요소에서 속성을 가져온다.
+		tempTitle = $(this).attr("title"); //속성에 타이틀 추가.
+		console.log(tempTitle); //콘솔이 출력
+		type = $(this).attr("class") // 속성에 클래스추가.
+		console.log(type); //콘솔에 출력
 
-				if(type == "img"){ //type안의 클래스 img가 있을 때,
-					var	tempImg = '<img src ="' + tempTitle + '" + width = "100"  height = "100">'
-				}
-			//해당되는 요소에 태그 추가
-			$("body").append("<div id = 'tip'></div>");//body에 div태그 추가
-			if(type == "img"){ //type이 img라면
-				$("#tip").html(tempImg); //html로 tempImg 출력
-				$("#tip").css("width","100px");
-			}else{
-				$("#tip").text(tempTitle);
-			}
-			//툴팁에 위치설정
-			
-			var pageX = $(this).offset().left - 20;
-			var pageY = $(this).offset().top - $("#tip").innerHeight(); //tip의 크기만큼 올리는데 여백(inner)을 포함
+		if(type == "img"){ //클래스의 속성이 img 일 때
+			var tempImg = '<img src= "' + tempTitle + '" + width = "100" height = "100">' //width 100 , height 100 추가
+		}
+		
+		//해당되는 요소에 태그를 추가한다.
+		$("body").append("<div id = tip></div>"); // div tip을 append로 추가
+		if(type == "img"){ // type 이 img 클래스 라면 
+			$("#tip").html(tempImg);  // 이미지를 html에 추가.
+			$("#tip").css("width","100px"); //tip에 width: 100px 추가
+		}else{
+			$("#tip").text(tempTitle); // img클래스가 아닌곳에는 text추가.
+		}
 
-			//툴팁이 fadeIn 2초가 적용되어 나타나게 하고 싶을때, css에서 display:none;을 줘야한다.
-			$("#tip").css({left: pageX + "px", top: pageY + "px"}).fadeIn(2000);
+		//툴팁의 위치를 설정한다.
 
-		},
-			function(){
-				$("#tip").remove();
-		});
+		var pageX = $(this).offset().left -20; //left-20px 만큼 포지션을 줌
+		var pageY = $(this).offset().top - $("#tip").innerHeight()//padding값을 포함하여 포지션 top을 준다.
+		
+		//툴팁의 부드러운 연출을 위해 fadeIn 0.5초를 줌.
+		$("#tip").css({left: pageX + "px", top: pageY + "px"}).fadeIn(500); //tip에 left값과 top값을 준다.
+	},
+		
+	
+		function(){
+			$("#tip").remove();//툴팁에서 나갔을 떄, 사라지기 위해 remove기능을 넣어준다.
+		}
+		);
 		
 
 	</script>

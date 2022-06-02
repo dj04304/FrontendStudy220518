@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <title>ScrollMenu</title>
+    <!-- 스타일시트 -->
+    <style>
+        *{ margin: 0; padding: 0;}
+        body{background: #545454;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+
+    #wrap{width: 100%;}
+
+   /* header */
+    #header{width: 100%; height: 100px;
+        position: fixed; top: 0; left: 0;
+        background-color: cornflowerblue;
+        z-index: 9999;}
+    
+    #header ul.menu{ margin: 0 auto; margin-top: 45px;
+                width: 1000px; height: 30px;
+                border: 1px solid #fff;
+    }
+    
+    #header ul.menu li{float: left; width: 333px; 
+                text-align: center;
+                line-height: 30px;
+                border-right: 1px solid #fff;
+                box-sizing: border-box;
+    }
+    
+    #header ul.menu li:last-child{
+        border-right: 0px;
+    }
+
+    #header ul.menu li a{
+        color: #fff;
+        display: block;
+        height: 30px;
+    }
+
+    #header ul.menu li.on a{
+        color: #000;
+        background-color: #fff;
+        display: block;
+    }
+
+    /* contents */
+    #contents{width: 100%; }
+    #contents > div{margin: 0 auto;
+                padding-top: 120px;
+                width: 1000px; height: 800px;}
+
+    #contents div#paper{background-color: chartreuse;}
+
+    #contents div#works{background-color: crimson;}
+
+    #contents div#email{background-color: magenta; height: 1000px;}
+    </style>
+    
+    <!-- jQuery -->
+    <script>
+        //전역변수 : 전체 사용되고 있는 변수, 지역변수: 그 지역 내에만 쓰이는 변수
+        $(function(){
+            //변수 선언
+            var menu = $(".menu > li"); 
+            var contents = $("#contents > div");
+
+            //클릭했을 때 화면의 움직임을 적용
+            menu.click(function(event){
+                event.preventDefault; // event가 작동 안하게 함.
+               var tg = $(this); //menu li 를 tg라고 설정
+               console.log(tg);
+               var i = tg.index(); //tg의 index값을 i라고 설정
+               console.log(i);
+
+               var section = contents.eq(i);// contents의 i번째를 설정
+               console.log(section);
+               var tt = section.offset().top;// section의 포지션을 top으로 설정
+               console.log(tt);
+
+
+               menu.removeClass("on");//기존에 있던 색 제거
+               $(tg).eq(0).addClass("on"); //색 추가
+               
+               //스크롤을 지정한곳으로 이동할 때 $("html, body")를 사용
+               $("html, body").animate({scrollTop:tt}); // 세로로 움직이는 scrollTop 을 설정
+
+            }); 
+
+            //화면에 상하 스크롤을 했을 때, 메뉴에 클래스를 적용
+            //화면에서 스크롤했을 때의 기능
+            $(window).scroll(function(){ //window에 스크롤에 의해 실행
+               var sct = $(window).scrollTop(); //window의 scrollTop
+
+               contents.each(function(){ //콘텐츠의 각 div를 순서대로 처리 (each문)
+                    var tg = $(this); //this 를 tg에 담는다.
+                    var i = tg.index(); // this의 index값을 i에 담는다.
+                    
+                    //해당div의 top에 스크롤 top이 있는지 확인하는 조건문
+                    if(tg.offset().top <= sct){ //tg의 top위치가 sct와 같다면
+                        menu.removeClass("on");
+                        menu.eq(i).addClass("on");
+                    }
+               });
+
+            });
+
+
+        });
+    </script>
+</head>
+    <!-- HTML -->
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <ul class="menu">
+                <li><a href="#">paper</a></li>
+                <li><a href="#">work</a></li>
+                <li><a href="#">email</a></li>
+            </ul>
+        </div>
+        <!-- contents -->
+        <div id="contents">
+            <div id="paper">paper</div>
+            <div id="works">work</div>
+            <div id="email">email</div>
+        </div>
+    </div>
+</body>
+</html>

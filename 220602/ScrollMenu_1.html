@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <title>ScrollMenu_1</title>
+    <!-- 스타일시트 -->
+    <style>
+        *{ margin: 0; padding: 0;}
+        body{background: #545454;}
+        ul li{list-style: none;}
+        a{text-decoration: none;}
+
+    #wrap{width: 100%;}
+
+   /* header */
+    #header{width: 100%; height: 100px;
+        position: fixed; top: 0; left: 0;
+        background-color: cornflowerblue;
+        z-index: 9999;}
+    
+    #header ul.menu{ margin: 0 auto; margin-top: 45px;
+                width: 1000px; height: 30px;
+                border: 1px solid #fff;
+    }
+    
+    #header ul.menu li{float: left; width: 333px; 
+                text-align: center;
+                line-height: 30px;
+                border-right: 1px solid #fff;
+                box-sizing: border-box;
+    }
+    
+    #header ul.menu li:last-child{
+        border-right: 0px;
+    }
+
+    #header ul.menu li a{
+        color: #fff;
+        display: block;
+        height: 30px;
+    }
+
+    #header ul.menu li.on a{
+        color: #000;
+        background-color: #fff;
+        display: block;
+    }
+
+    /* contents */
+    #contents{width: 100%; }
+    #contents > div{margin: 0 auto;
+                padding-top: 120px;
+                width: 1000px; height: 800px;}
+
+    #contents div#paper{background-color: chartreuse;}
+
+    #contents div#works{background-color: crimson;}
+
+    #contents div#email{background-color: magenta; height: 1000px;}
+
+    #q_mn{ width: 100px; height: 200px;
+        background-color: #ccc;
+        position: absolute;
+        top: 200px; right: 50px;
+        z-index: 9999;
+    }
+
+    #q_mn ul{ margin: 0 auto; margin-top: 30px;
+            width: 50px;
+
+    }
+
+    #q_mn ul li{
+        margin-bottom: 10px;
+    }
+    </style>
+    
+    <!-- jQuery -->
+    <script>
+        //전역변수 : 전체 사용되고 있는 변수, 지역변수: 그 지역 내에만 쓰이는 변수
+        $(function(){
+            //변수선언
+            var menu = $(".menu > li"); //menu > li 를 menu 라고 정해준다.
+            var contents = $("#contents > div"); //contents > div 를 contents 라고 정해준다
+
+            //메뉴 클릭시 기능
+            menu.click(function(event){
+                event.preventDefault; // event 작동을 멈춰준다.
+            var tg = $(this); //menu의 위치를 tg에 담아줌
+            console.log(tg);
+            var i = tg.index();// tg의 배열을 설정
+            console.log(i);
+
+            var section = contents.eq(i);//section 에 배열의 위치를 담아준다.
+            console.log(section);
+            var tt = section.offset().top; //tt에 section의 포지션을 top으로 지정
+            console.log(tt);
+
+            menu.removeClass("on"); //기존의 색 제거
+            $(tg).eq(0).addClass("on"); //색을 추가해준다.
+            //메뉴 클릭시 tt로 설정해둔 위치로 scrollTop이동
+            $("html, body").stop().animate({scrollTop:tt});
+            });
+
+            //화면에 스크롤 했을 때의 기능
+            $(window).scroll(function(){
+                var sct = $(window).scrollTop(); //윈도우의 스크롤바 위치가 top
+                
+                
+                //콘텐츠의 각 div를 순서대로 처리해야 하기 때문에 순환문을 써준다. 0 1 2 
+                contents.each(function(){
+                    var tg = $(this);
+                    console.log(tg);
+                    var i = tg.index();
+                    console.log(i);
+                
+                    
+                    //tg의 위치가 top에 있는 지 확인하고 이동시킨다.
+                    if(tg.offset().top <= sct){ //tg 의 포지션이 탑에 있을 때 window.scrollTop의 위치와 같거나 크다면
+                        menu.removeClass("on"); //menu 의 색을 제거하고
+                        menu.eq(i).addClass("on"); //menu 색을 다시 추가해준다.
+                    }
+
+                });
+                var scrTop =  sct + 200; 
+                console.log(scrTop);
+                $("#q_mn").stop().animate({top:scrTop + "px"}, 500);
+                
+            
+        });
+
+           
+
+
+        });
+
+    </script>
+</head>
+    <!-- HTML -->
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <ul class="menu">
+                <li><a href="#">paper</a></li>
+                <li><a href="#">work</a></li>
+                <li><a href="#">email</a></li>
+            </ul>
+        </div>
+        <!-- contents -->
+        <div id="contents">
+            <div id="paper">paper</div>
+            <div id="works">work</div>
+            <div id="email">email</div>
+        </div>
+        <!-- 사이드 메뉴 -->
+        <div id="q_mn">
+            <ul class="q_menu">
+                <li><a href="#">paper</a></li>
+                <li><a href="#">work</a></li>
+                <li><a href="#">email</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
