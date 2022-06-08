@@ -1,0 +1,170 @@
+#wrap{width: 960px; margin: 0 auto;}
+
+/*  header */
+#header{width: 100%; height: 200px;}
+
+#header .logo{float: left;
+        padding: 70px 0 0 20px;
+        text-align: center;
+         
+}
+
+#header .logo img{ width: 300px;
+        
+}
+
+#header .menu{margin: 0 auto; width: 600px; height: 150px;
+            line-height: 100px;
+            
+}
+
+#header .menu ul{padding-top: 80px;}
+
+#header .menu ul li{float: left;
+                padding-left: 70px;
+                font-size: 15px;
+                color: #666666;        
+}
+
+/* main */
+
+#main{ width: 100%; height: 350px;
+        overflow: hidden;
+        position: relative;
+}
+
+#main h3{width: 100%;
+    position: absolute;
+    top: 150px; left: 0;
+    font-size: 25px;
+    color: #009688;
+    text-align: center;
+    
+}
+
+#main ul{ 
+}
+
+#main ul li{
+
+}
+
+
+
+#main ul li img{}
+
+/* 콘텐츠 */
+
+#contents{
+        width: 100%; height: 500px;}
+
+/* 공지사항 */
+
+#contents .con1{margin: 0 auto;
+        width: 100%; height: 130px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+    
+}
+
+#contents .con1 h3{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+
+#contents .con1 ul{ margin: 0 auto;
+                width: 400px;
+                line-height: 17px;
+}
+
+#contents .con1 ul li{}
+
+#contents .con1 ul li a{color: #666666;}  
+
+#contents .con1 ul li span{float: right;
+
+} 
+
+/* 파트너, 아이콘 */
+
+#contents2{ margin: 0 auto;
+            width: 960px;
+            margin-top: 20px 
+
+}
+
+#contents2 .partner{ float: left;
+        width: 400px; height: 350px;
+
+}
+/* 파트너 */
+
+#contents2 .partner h3{
+}
+
+#contents2 .partner h3 > a{}
+
+#contents2 .partner h3 > a > img{ width: 100%;}
+
+#contents2 .contain img{
+        width: 100%;
+        height: 130px;
+        margin-top: 10px;
+
+} 
+#contents2 .p_text{
+    text-align: center;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+#contents2 .p_text li{
+    font-size: 15px;
+
+}
+
+/* 아이콘 */
+
+#contents2 .icon{ float: right;
+    width: 400px;
+
+}
+
+
+#contents2 .icon ul{text-align: center;
+             line-height: 20px;
+    
+}
+
+#contents2 .icon ul li{padding-top: 15px;
+    
+}
+
+#contents2 .icon ul li a{
+            margin-left: 70px;
+            font-size: 15px;
+            
+
+}
+
+#contents2 .icon ul li img{width: 80px;
+    
+}
+
+
+#footer{width: 100%; height: 150px;
+        border-top: 1px solid #000;}
+
+#footer address{float: left;
+        padding-top: 10px;
+}
+
+#footer ul{padding-top: 10px;
+            float: right;
+            padding-right: 20px;
+}
+
+#footer ul li{float: left;
+        margin-left: 50px;
+}
