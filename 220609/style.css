@@ -1,0 +1,169 @@
+#all{margin: 0 auto;
+        width: 960px; height: 1200px;}
+
+#header{width: 100%; height: 200px;
+        background-color: bisque;}
+
+#header .logo{ float: left;
+        width: 150px; height: 80px;
+        margin: 60px 0 0 40px;
+        background-color: aquamarine;
+        background: url(./images/한국대학교_총동문회_LOGO1.png) no-repeat 0 0;
+        background-size: 100%;
+        
+}
+
+#header .logo a{ display: block; height: 120px;
+}
+
+#header .main_nav{ float: right;
+        margin: 90px 60px 0 0;
+        width: 600px; height: 30px;
+}
+        
+
+#header .main_nav li{float: left;
+        width: 200px; height: 30px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        text-align: center;
+}
+
+#header .main_nav a{ display: block; font-size: 20px;
+                font-weight: bold;
+}
+
+#main_img{width: 100%; height: 350px; position: relative;
+        
+}
+
+#main_img img{width: 100%; height: 350px;}
+
+#main_img .imgs{
+        width: 100%; height: 350px;
+        overflow: hidden;
+}
+
+#main_img .imgs ul{ width: 100%; position: relative;
+
+}
+
+#main_img .imgs li{ width: 100%; height: 350px;
+        position: absolute;
+}
+
+#main_img .imgs li.img01{top: 0; left: 0;       background: url(../220609/images/images\(1\).jpg) no-repeat 0 0;}
+#main_img .imgs li.img02{top: 0; left: 100%;    background: url(../220609/images/images\(2\).jpg) no-repeat 0 0;}
+#main_img .imgs li.img03{top: 0; left: 200%;    background: url(../220609/images/images\(3\).jpg) no-repeat 0 0;}
+
+#main_img .btns{position: absolute; left: 50%; bottom: 20px;
+        z-index: 9999;
+        margin-left: -32.5px;}
+
+#main_img .btns li{float: left; width: 15px; height: 15px;
+        margin-left: 10px;
+        border-radius: 50%; overflow: hidden;
+        background-color: azure;}
+
+
+
+/* a태그에 display: block 과 높이를 주면, 글자가 없어도 pointer 가능 */
+#main_img .btns a{display: block; height: 15px;}
+
+#main_img .lbtn{width: 30px; height: 30px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        position: absolute;
+        text-align: center;
+        left: 100px; top: 60px; z-index: 9999;}
+
+
+#main_img .rbtn{width: 30px; height: 30px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        position: absolute;
+        text-align: center;
+        right: 100px; top: 60px; z-index: 9999;}
+
+#contents{width: 100%; height: 500px;
+        background-color: chartreuse;}
+
+#contents article{
+        background-color: bisque;
+}
+
+#contents .notice{float: left; margin: 75px 0 0 40px;
+                width: 430px; height: 350px;
+}
+
+#contents .notice header{width: 100%; height: 50px;
+                background-color: aqua;}
+
+#contents .notice header h3{font-size: 16px; line-height: 50px;
+                padding-left: 16px;
+}
+
+#contents .notice section{width: 100%; height: 300px;
+                padding: 10px; box-sizing: border-box;}
+
+#contents .notice section ul{margin-top: 20px;}
+
+#contents .notice section li{margin-bottom: 10px;}
+
+#contents .notice section a{font-size: 12px;}
+
+#contents .notice section span{float: right;}
+
+#contents .group{float: right; width: 400px;
+                margin:20px 40px 0 0;
+}
+
+#contents .partner{width: 420px; height: 200px;
+                margin-bottom: 40px;}
+
+#contents .partner header{ width: 100%; height: 30px;
+}
+
+#contents .partner header h3{ font-size: 16px; line-height: 30px;
+                padding-left: 16px;
+}
+
+#contents .partner section{width: 100%; height: 150px;
+
+}
+
+#contents .partner section > img{float: left; width: 150px; 
+                margin: 30px 0 0 10px;
+        
+}
+
+#contents .partner .group{float: right; width: 200px;
+        
+}
+
+#contents .partner .group ul{
+                text-align: center;
+
+}
+
+#contents .partner .group li{
+        
+}
+
+#contents .partner .group > img{
+                margin-top: 10px;
+}
+
+
+#contents .icon{width: 420px; height: 200px;}
+
+
+#footer{width: 100%; height: 150px;
+        background-color: cornflowerblue;}
+
+#popup{position: absolute;
+        top: 450px; left: 50%; z-index: 9999;
+        width: 150px; height: 250px;
+        border: 1px solid #ccc;
+        background-color: darkgoldenrod;
+        border-radius: 5px;}
