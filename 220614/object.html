@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/object2.js"></script>
+    <script src="./js/object(class).js"></script>
+    <title>object</title>
+</head>
+<body>
+     <!-- 객체(Object) -->
+    <!-- 실생활에서 우리가 인식할 수 있는 사물들을 객체라고 합니다. -->
+
+    <!-- 프로퍼티(Property) -->
+    <!-- 자바스크립트의 기본 타입은 객체입니다. -->
+    <!-- 객체란 이름과 값으로 구성된 프로퍼티의 정렬되지 않은 집합입니다. -->
+    <!-- 프로퍼티의 값으로 함수도 올 수 있는데, 이를 프로퍼티 메소드라고 부릅니다. -->
+
+    <!-- 배열과 차이점 -->
+    <!-- 1.인덱스가 있다. 2. 타입은 공통되어야 한다. 3. 크기가 정해져 있다. -->
+
+    <!-- 객체를 만드는 방법 -->
+    <!-- 1. 리터럴 표기법: "~ 은 ~ 입니다." 한개만 만듦 -->
+
+    리터럴 표기법<br>
+
+    const Car = {
+        Property1: A,
+        Property2: B,
+        ...
+    }
+    <br><br><br><br>
+
+    <!-- 2. 생성자를 이용한 객체 생성: 여러개 만듦-->
+    <!-- new연산자를 사용하여 객체를 생성하고 초기화할 수 있음 -->
+    <!-- 이 때 사용되는 메소드를 생성자라고 하며, 이는 새롭게 생성되는 객체를 초기화하는 역할을 한다. -->
+    
+    new연산자를 이용한 객체 생성<br>
+
+    function Class(매개변수1, 매개변수2, ..) {
+        this.name = name;
+        this.color = color;
+        ...
+    }
+    <br>
+    let 변수명 = new Class(name, color);
+    <br><br><br><br>
+
+    <!-- 3. 클래스를 이용한 객체생성(설계도 개념) -->
+
+    const Class = class{
+        <p>constructor(매개변수1, 매개변수2...){
+           this.name = name;
+            this.age = age;
+            this.color = color;
+        }</p>
+        method(){
+            return 값
+        }
+    }
+</body>
+</html>

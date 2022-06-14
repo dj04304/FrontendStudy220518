@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+    <style>
+        #mainimg {
+            margin: 0px auto;
+            width: 100%; height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        #mainimg > video {
+            width: 100%;
+        }
+        h1 { position: absolute; top: 450px; left: 40%;
+            width: 500px;
+            text-align: center;
+            font-size: 40px; color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainimg">
+        <h1>동영상 메인으로 하기</h1>
+        <video src="./Nature - 109454.mp4" muted autoplay loop></video>
+    </div>
+    <!-- preload 사전에 다운을 받는 기능 -->
+    <!-- 동영상 하나만 사용할 때 -->
+    <video src="./The Simpsons.mp4" style="width: 600px; height: 300px;" preload="auto"></video>
+    <br><br><br>
+
+    <!-- 동영상 여러개가 필요할 때 -->
+    <video controls autoplay loop muted style="width: 600px; height: 300px;">
+        <source src="./The Simpsons.mp4">
+    </video>
+    <!-- 유튜브 영상 가져오기 iframe -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dWInNGhwidQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</body>
+</html>
