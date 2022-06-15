@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    
+    <script>
+        "use strict";
+        const str1 = "안녕하세요 javaScript";
+        console.log(str1.length); //str1값의 크기
+
+        console.log(str1.indexOf('j')); // 0부터 시작해서 문자의 위치를 알려줌
+        console.log(str1.indexOf("java")); // 문자 시작 위치를 알려줌
+        console.log(str1.indexOf('s')); //대 소문자 구분해서 찾아줘야 함, 값을 찾지 못할경우 -1 리턴
+        console.log(str1.indexOf('a')); // 중복되는 문자가 있다면, 젤 앞의 위치값을 리턴
+       
+        console.log(str1.charAt(6)); // index의 위치에 있는 값을 리턴
+        
+        console.log(str1.includes("java")); //true 인수로 전달받은 값이 포함되어 있다면 true를 리턴
+        console.log(str1.includes("Java")); //false
+
+        console.log(str1.substring(6)); // 인수로 전달받은 값의 위치부터 리턴해줌
+        console.log(str1.substr(6,4)); // substr(시작점, 끝나는 점) 리턴
+
+        const str2 = "드라이브, 영화감상, 게임, 쇼핑, 잠자기, 여행";
+        
+        const hobby = str2.split(); //배열 
+        console.log(hobby);
+
+        for(var i = 0; i < hobby.length; i++){
+            console.log(str2);
+        }
+        
+        hobby.forEach(function(val,idx,arr){
+            console.log(`값: ${val}, 인덱스: ${idx}, 배열:${arr}`)
+        });
+
+        console.log("=============================================================================");
+
+        console.log(str1.replace("안녕하세요", "헬로우"));
+        console.log(str1);
+
+        const str3 = "                 javaScript                  ";
+        console.log(`|${str3}|`);
+        console.log(`|${str3.trim()}|`);
+
+        console.log(str3.toLowerCase()); //소문자
+        console.log(str3.toUpperCase()); //대문자
+
+    </script>
+</body>
+</html>

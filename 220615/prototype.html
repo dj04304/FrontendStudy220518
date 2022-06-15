@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Dog(name, age, color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+
+        const rucy = new Dog("루시", 10, "white");
+        const poppy = new Dog("뽀삐", 5, "black");
+        console.log(rucy);
+        console.log(`이름: ${rucy.name}`);
+        console.log(`나이: ${rucy.age}`);
+        console.log(`색깔: ${rucy.color}`);
+        console.log("================================================================================")
+        console.log(poppy);
+        console.log(`이름: ${poppy.name}`);
+        console.log(`나이: ${poppy.age}`);
+        console.log(`색깔: ${poppy.color}`);
+    </script>
+</body>
+</html>
