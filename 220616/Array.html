@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // const date = new Date();
+        // const hour = date.getHours();
+    
+        // if(hour < 12) {
+        //     alert("오전 입니다.")
+        // }else{
+        //     alert("오후 입니다.")
+        // }
+
+        let arr = ["사과", "바나나", "포도", "멜론"];
+        
+        console.log(arr.length);
+        console.log("========================");
+        console.log(arr[1]);
+        console.log("========================");
+        for(let i = 0; i < arr.length; i++){
+            console.log(i);
+            console.log(arr[i]);
+        }
+        console.log("========================");
+        for(let i in arr){
+            console.log(arr[i]);
+        }
+
+        console.log("========================");
+        for(let i of arr){
+            console.log(i);
+        }
+        console.log("========================");
+        function f(x) {
+            return x * x;
+
+        }
+        const num = f(3);
+        console.log(num);
+
+        function sample(...num1) {
+            console.log(num1);
+        }
+
+            sample(100, 200, 300)
+    </script>
+    
+</body>
+</html>

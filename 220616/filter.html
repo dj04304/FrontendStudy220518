@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let numbers = [0, 1, 2, 3, 4, 5];
+
+        const evenNumbers = numbers.filter(function (value) {
+            return value % 2 === 0; //짝수
+        });
+
+        console.log(`원래배열: ${numbers}`);
+        console.log(`짝수만 추출: ${evenNumbers}`);
+
+        // 화살표 함수
+        let num1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        num1.filter((value) => value % 2 === 0)
+            .map((value) => value * value)
+            .forEach((value) => {console.log(value)});
+
+    </script>
+</body>
+</html>
