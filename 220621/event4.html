@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event4</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            position: relative;
+            left: 0;
+            top: 0;
+
+            margin-top: 35px;
+
+            width: 600px;
+            height: 200px;
+
+            overflow: hidden;
+        }
+        
+        button {
+            margin-left: 50px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .gallery {
+            position: absolute;
+            left: -600px;
+            top: 40px;
+
+
+            width: 600px;
+            height: 200px;
+            
+            list-style-type: none;
+            transition: left 0.5s ease-in-out;
+        }
+
+
+        .gallery li {
+            float: left;
+
+            width: 200px;
+            height: 200px;
+
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .gallery li:nth-child(1){background-color: brown;}
+        .gallery li:nth-child(2){background-color: pink;}
+        .gallery li:nth-child(3){background-color: yellowgreen;}
+
+        .gallery.active {
+            left: 0;
+        }
+
+        .gallery li.over {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <button type="button" id="tab">gallery open</button>
+        <ul class="gallery">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+   </div>
+
+    <script>
+
+        window.addEventListener("load", () => {
+            const tab = document.querySelector("#tab"); // id 요소 tab 을 가져옴
+            const slide = document.querySelector(".gallery"); // gallery class 요소 가져옴
+            const slideList = document.querySelectorAll(".gallery li"); //gallery li요소들 가져옴
+            console.log(slideList);
+            let status = "closed"; //상태값
+
+            tab.addEventListener("click", (e) => {
+
+                if(status === "closed"){
+                    status = "open";
+                    e.target.innerText = "gallery closed";
+                    slide.classList.add("active");
+                }else if (status === "open") {
+                    status = "closed";
+                    e.target.innerText = "gallery open";
+                    slide.classList.remove("active");
+                }
+                
+            });
+
+            // 이미지 투명도
+            for(let i = 0; i < slideList.length; i++){
+                slideList[i].onmouseover = () => {
+                    slideList[i].classList.toggle("over")
+                }
+            }
+
+            for(let i = 0; i < slideList.length; i++){
+                slideList[i].onmouseout = () => {
+                    slideList[i].classList.toggle("over")
+                }
+            }
+
+
+            // 버튼 투명도
+            tab.onmouseover = () => {
+                    slideList[i].classList.toggle("over")
+                }
+            
+            tab.onmouseout = () => {
+                slideList[i].classList.toggle("over")
+            }
+            
+
+
+
+
+        });
+    </script>
+</body>
+</html>

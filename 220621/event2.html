@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event2</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            padding: 50px;
+        }
+
+        .ball {
+            position: absolute;
+            top: 120px;
+            left: 40px;
+   
+            border-radius: 50%;
+
+            width: 50px;
+            height: 50px;
+
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="queue">animate queue</button>
+        <button id="queue2">초기화 버튼</button>
+        <div class="ball"></div>
+    </div>
+
+    <script>
+
+        window.addEventListener("load", () => {
+           
+            const btn = document.querySelector("#queue");
+            const btn2 = document.querySelector("#queue2");
+            const ball = document.querySelector(".ball");
+            let x = ball.offsetLeft;
+            let targetX = 400;
+
+
+            btn.addEventListener("click", () => {
+              const timer = setInterval(() => {
+                    //조건 x < targetX 가 되면 390이기 때문에 esle 에 x 값을 targetX 에 넣어줘서 400을 완성시킨다.
+                    if(x < targetX){ //40.....390(400)
+                        x = x + 10; //x의 위치를 10씩 이동
+                    }else { // 390
+                        x = targetX; //400
+                        clearInterval(timer); //반복 중단
+                    }
+                   
+                    ball.style.left = x + "px"
+                }, 10)
+
+            });
+
+            btn2.addEventListener("click", () => {
+                const reset = setInterval(() => {
+                    //조건 x == targetX 면 처음으로 돌아간다.
+                    if(x == targetX){ //x 의 값이 targetX와 같으면 x의 위치가 다시 돌아감
+                        x = 40;
+                    }else {
+                        clearInterval(reset); //반복 중단
+                    }
+
+                    ball.style.left = x +"px"
+
+                }, 10);
+            })
+        });
+    </script>
+</body>
+</html>

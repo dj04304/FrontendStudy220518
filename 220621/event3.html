@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event3</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            padding: 50px;
+        }
+
+        .ball {
+            position: absolute;
+            top: 120px;
+            left: 40px;
+   
+            border-radius: 50%;
+
+            width: 50px;
+            height: 50px;
+
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="queue">animate queue</button>
+        <button id="queue2">초기화 버튼</button>
+        <div class="ball"></div>
+    </div>
+
+    <script>
+
+        window.addEventListener("load", () => {
+           
+            const btn = document.querySelector("#queue");
+            const btn2 = document.querySelector("#queue2");
+            const ball = document.querySelector(".ball");
+            let x = ball.offsetLeft;
+            let targetX = 400;
+
+            btn.addEventListener("click", () => {
+                animate1(ball, x, targetX); //함수 호출
+                console.log(animate1);
+            });
+
+            animate1 = (target, startx, targetX) =>  { //구조분해할당 매개변수를 target, startx, targetX로 변경해서 전달
+                const timer = setInterval(() => {
+                    if(startx < targetX) { //startx 가 targetX보다 작을 때
+                        startx += 10; //startx값에 10을 더해준다.
+                    }else { 
+                        startx == targetX;
+                        clearInterval(timer); //반복 초기화
+                    }
+                    
+                    target.style.left = startx +"px"; //target(ball)의 위치를 left startx의 위치로 변경
+
+                }, 10);
+
+                
+            }
+
+        });
+    </script>
+</body>
+</html>
