@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+</head>
+<body>
+    <label for="select">선택: </label>
+    <select name="" id="select" >
+        <optgroup label="분식">
+            <option value="떡볶이" selected>떡볶이</option>
+            <option value="순대">순대</option>
+            <option value="오뎅">오뎅</option>
+            <option value="튀김">튀김</option>
+        </optgroup>
+        <optgroup label="한식">
+            <option value="덮밥">덮밥</option>
+            <option value="국밥">국밥</option>
+            <option value="고등어 정식">고등어 정식</option>
+        </optgroup>
+    </select>
+
+    <p>선택: 떡볶이</p>
+
+    <script>
+        const select = document.querySelector("select");
+        const p = document.querySelector("p");
+
+        select.onchange = () => {
+            const option = event.currentTarget.options; // option의 값을 가져옴
+            const index = event.currentTarget.options.selectedIndex; //selectedIndex 는 현재 선택된 값의 배열을 가져오는 역할을 한다.
+
+            p.textContent = "선택: " + option[index].textContent;   //option 에서 selected된 값을 p태그에 전달한다.
+        }
+    </script>
+</body>
+</html>

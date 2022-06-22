@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <script>
+        const textarea = document.querySelector("textarea"); //textarea 태그 요소 선택
+        const h1 = document.querySelector("h1"); //h1 태그 요소 선택
+
+        textarea.onkeyup = () => { //textarea 에서 keyup을 했을 때,
+            const length = textarea.value.length; // textarea 내의 값의 크기 를 length라는 변수에 담아준다.
+            h1.textContent = "글자수" + length; // h1에 textContent(텍스트 값을 전달) 
+        }
+
+    </script>
+</body>
+</html>

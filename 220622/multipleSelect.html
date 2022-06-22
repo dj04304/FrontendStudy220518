@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multipleSelect</title>
+</head>
+<body>
+    <label for="select">선택: </label>
+    <select name="" id="select" multiple >
+        <optgroup label="분식">
+            <option value="떡볶이" selected>떡볶이</option>
+            <option value="순대">순대</option>
+            <option value="오뎅">오뎅</option>
+            <option value="튀김">튀김</option>
+        </optgroup>
+        <optgroup label="한식">
+            <option value="덮밥">덮밥</option>
+            <option value="국밥">국밥</option>
+            <option value="고등어 정식">고등어 정식</option>
+        </optgroup>
+    </select>
+
+    <br><br>
+    <p></p>
+
+    <script>
+        const select = document.querySelector("select");
+        const p = document.querySelector("p");
+
+        select.onchange = () => { //select onchange 했을 때 
+            const options = event.currentTarget.options; // option의 값을 가져옴
+            const list = []; //배열 선언
+            for(const option of options){ //반복문 option 값의 options의 반복
+                if(option.selected){ //만약 option이 selected된다면, 
+                    list.push(option.textContent)
+                }
+            }
+
+            p.textContent = "선택:" + list.join(','); //list 의 값을 불러온다 (join)
+
+        }
+    </script>
+</body>
+</html>

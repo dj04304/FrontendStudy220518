@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallary0622_slide</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        ul li { list-style-type: none;}
+
+        a{ text-decoration: none;}
+
+        .container {
+            margin-top: 35px;
+            min-width: 440px; 
+        }
+
+        .controller {
+            padding-top: 20px;
+        }
+
+        .controller li {
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        .controller li:first-child {
+            margin-left: 0px;
+        }
+
+        .controller li a {
+            display: block;
+
+            border-radius: 10px;
+            
+            width: 20px;
+            height: 20px;
+
+            background-color: rgb(138, 201, 45);
+
+            transition: all 0.3s;
+        }
+
+        .controller li.on a{
+            width: 50px;
+            background-color: cornflowerblue;
+        }
+
+        .picture {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            position: relative;
+            
+            width: 400px;
+            height: 400px;
+
+        }
+
+        .picture ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+
+            width: 2400px;
+            height: 400px; 
+            
+            transition: all 0.3s ease-in-out;
+        }
+
+        .picture ul li {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 400px;
+            height: 400px;
+
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .picture ul li.act {
+            opacity: 1;
+        }
+
+        .picture ul li div {
+            width: 400px;
+            height: 400px;
+        }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="controller">
+            <li class="on"><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+        <div class="picture">
+            <ul>
+                <li class="act">
+                    <div style="background-color: mediumvioletred;">0</div>
+                </li>
+                <li>
+                    <div style="background-color: aquamarine;">1</div>
+                </li>
+                <li>
+                    <div style="background-color: chartreuse;">2</div>
+                </li>
+                <li>
+                    <div style="background-color: cornflowerblue;">3</div>
+                </li>
+                <li>
+                    <div style="background-color: pink;">4</div>
+                </li>
+                <li>
+                    <div style="background-color: brown;">5</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script>
+        const controller = document.querySelectorAll(".controller li");
+        const picture = document.querySelector(".picture ul");
+        const pictureList = document.querySelectorAll(".picture li");
+
+        for(let i = 0; i < controller.length; i++){ //controller 의 크기만큼 반복
+            let n = 0; //n 변수 선언
+            controller[i].index = i; // controller[i].index 에 i의 값을 담는다.
+
+            controller[i].onclick = (e) => { // onclick 했을 때의 기능
+                e.preventDefault(); // submit과 동시에 새로 이동되는 것을 막아주는 역할을 한다.
+                n = e.currentTarget.index; // e의 부모값의 인덱스를 n에 담아준다.
+                // console.log("클릭") //테스팅
+               
+
+                //버튼의 모양(on클래스) 바꿔주는 반복문
+                for(let j = 0; j < controller.length; j++){ //controller의 크기만큼 반복
+                    if(j == n){ //j 가 n의 값과 같을 때 add 아니면 remove
+                        controller[j].classList.add("on")
+                        pictureList[j].classList.add("act")
+                    }else {
+                        controller[j].classList.remove("on")
+                        pictureList[j].classList.remove("act")
+                    }
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

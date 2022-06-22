@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>star</title>
+</head>
+<body>
+    <h1>★</h1>
+
+    <script>
+        const star = document.querySelector("h1");
+        const body = document.querySelector("body");
+        star.style.position = "absolute"; //style position을 줌
+
+        let [x, y] = [0, 0]; // x 값 y값
+        const block = 20; 
+
+        //별의 위치를 출력하는 기능
+        const print = () => {
+            star.style.left = (x * block) + "px"; // star의 left 는 (x * block) + "px" 값이 된다. 
+            star.style.top = (y * block) + "px"; // star의 top 는 (x * block) + "px" 값이 된다. 
+        }
+
+            print();
+
+        //별의 위치를 이동하는 기능
+        const [left, up, right, down] = [37, 38, 39, 40]; //left, up, right, down 의 keyCode를 입력해줌
+
+        body.onkeydown = () => { //keydown 했을 때의 기능
+            switch (window.event.keyCode) { //switch문을 이용해 keyCode에 값을 전달해준다.
+                case left: 
+                    x -= 1 //left 값에 -1 전달
+                    break;
+                case up:
+                    y -= 1 //up 값에 1 전달
+                    break; 
+                case right:
+                    x += 1 //right 값에 1 전달
+                    break; 
+                case down:
+                    y += 1 //down 값에 -1 전달
+                    break;  
+            }
+                print(); // print 메소드 호출
+        }
+
+    </script>
+</body>
+</html>

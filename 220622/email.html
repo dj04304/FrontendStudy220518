@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email</title>
+</head>
+<body>
+    <input type="text">
+    <p></p>
+    <br><br><br><br>
+    <button type="button" onclick="{onLogin}">
+        <span>button01</span>
+    </button>
+
+    <script>
+        const input = document.querySelector("input");
+        const p = document.querySelector("p");
+
+        const isEmail = (value) => {
+            return (value.indexOf('@') > 1) //indexOf 는 위치를 말하며, 1의 위치보다 뒤에 있거나
+                && (value.split('@')[1].indexOf('.') > 1) //입력된 @ 의 배열이 .보다 앞에 있다면
+        }
+
+
+        input.onkeyup = () => {
+            const value = event.currentTarget.value; //target 은 자식에 이벤트를 적용하는 것이고, currentTarget은 부모에게 이벤트가 적용됨
+
+            if(isEmail(value)){ //isEmail함수는 전달된 매개변수가 email값인지 아닌지 확인해주는 함수다.
+                p.style.color = "green";
+                p.textContent = "이메일 형식입니다." + value;
+            }else {
+                p.style.color = "red";
+                p.textContent = "이메일 형식이 아닙니다." + value;
+            }
+        }
+
+        // //버튼을 눌렀을 때의 기능
+
+        // const onLogin = (e) => {
+        //     console.log(e.target)
+        //     console.log(e.currentTarget)
+        // }
+
+    </script>
+</body>
+</html>

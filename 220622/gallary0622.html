@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallary0622</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul li { list-style-type: none;}
+
+        a{ text-decoration: none;}
+
+        .container {
+            margin-top: 35px;
+            min-width: 440px; 
+        }
+
+        .controller {
+            padding-top: 20px;
+        }
+
+        .controller li {
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        .controller li:first-child {
+            margin-left: 0px;
+        }
+
+        .controller li a {
+            display: block;
+
+            border-radius: 10px;
+            
+            width: 20px;
+            height: 20px;
+
+            background-color: rgb(138, 201, 45);
+
+            transition: all 0.3s;
+        }
+
+        .controller li.on a{
+            width: 50px;
+            background-color: cornflowerblue;
+        }
+
+        .picture {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            position: relative;
+            
+            width: 400px;
+            height: 400px;
+
+            overflow: hidden;
+        }
+
+        .picture ul {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+
+            width: 2400px;
+            height: 400px; 
+            
+            transition: all 0.3s ease-in-out;
+        }
+
+        .picture ul li {
+
+            width: 400px;
+            height: 400px;
+        }
+
+        .picture ul li div {
+            width: 400px;
+            height: 400px;
+        }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="controller">
+            <li class="on"><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+        <div class="picture">
+            <ul>
+                <li>
+                    <div style="background-color: mediumvioletred;"></div>
+                </li>
+                <li>
+                    <div style="background-color: aquamarine;"></div>
+                </li>
+                <li>
+                    <div style="background-color: chartreuse;"></div>
+                </li>
+                <li>
+                    <div style="background-color: cornflowerblue;"></div>
+                </li>
+                <li>
+                    <div style="background-color: pink;"></div>
+                </li>
+                <li>
+                    <div style="background-color: brown;"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script>
+        const controller = document.querySelectorAll(".controller li");
+        const picture = document.querySelector(".picture ul");
+
+        for(let i = 0; i < controller.length; i++){ //controller 의 크기만큼 반복
+            let n = 0; //n 변수 선언
+            controller[i].index = i; // controller[i].index 에 i의 값을 담는다.
+
+            controller[i].onclick = (e) => { // onclick 했을 때의 기능
+                e.preventDefault(); // submit과 동시에 새로 이동되는 것을 막아주는 역할을 한다.
+                n = e.currentTarget.index; // e의 부모값의 인덱스를 n에 담아준다.
+                // console.log("클릭") //테스팅
+                let tagetX = n * (-400); //targetX 라는 변수에 n * (-400)을 해줌
+                picture.style.left = tagetX + "px";
+
+                
+
+
+                //버튼의 모양(on클래스) 바꿔주는 반복문
+                for(let j = 0; j < controller.length; j++){ //controller의 크기만큼 반복
+                    if(j == n){ //j 가 n의 값과 같을 때 add 아니면 remove
+                        controller[j].classList.add("on")
+                    }else {
+                        controller[j].classList.remove("on")
+                    }
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

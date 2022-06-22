@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <input type="text"> inch <br>
+    <button type="button">계산</button>
+    <p></p>
+
+    <script>
+        const input = document.querySelector("input");
+        const btn = document.querySelector("button");
+        const p = document.querySelector("p");
+
+        btn.onclick = () => {
+            const inch = Number(input.value) //input 내의 값을 Number 를 사용하여 숫자로 형 변환 해준다.
+
+            if(isNaN(inch)){ //isNaN은 매개변수의 값이 숫자인지 아닌지를 검사해주는 함수이다.
+                p.textContent = "숫자가 아닙니다." //p태그에 text 전달
+                return; //return을 해줘야 p태그에 텍스트가 전달됨   
+            }
+
+            const cm = inch * 2.54; // inch * 2.54 의 값은 cm 이다.
+            p.textContent = cm + "cm"; //p태그에 text 전달
+        
+        }
+
+        // enter키를 눌렀을 때 값 출력
+        input.onkeypress = () => {
+            if(window.event.keyCode == 13){ //13 은 enter 의 keyCode이다.
+                btn.onclick();
+            }
+        }
+
+    </script>
+</body>
+</html>
