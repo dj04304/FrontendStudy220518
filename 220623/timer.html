@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        span {
+            font-size: 12px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+
+        .on {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox">
+    <span>타이머를 눌러주세요</span>
+    <h2></h2>
+    <h1></h1>
+
+    <script>
+        let [timer, timerId] = [0, 0];
+        const h1 = document.querySelector("h1");
+        const span = document.querySelector("span");
+        const checkbox = document.querySelector("input");
+        const on = document.querySelector(".on")
+
+        checkbox.onchange = () => {
+            if(event.currentTarget.checked){
+                
+                span.textContent = "타이머 활성화";
+                span.style.color = "green";
+                span.classList.add("on");
+                
+                let min = 0;
+                timerId = setInterval(() => {
+                    timer += 1;
+                    if(timer == 60){
+                        timer = 0;
+                    }else
+                    h1.textContent = `${timer}초`;  
+                }, 1000);
+            } else {
+                clearInterval(timerId)
+                span.textContent = "타이머 비활성화";
+                span.style.color = "red";
+                span.classList.remove("on");
+            }
+        }
+
+
+        console.log([timer, timerId]);
+
+    </script>
+</body>
+</html>

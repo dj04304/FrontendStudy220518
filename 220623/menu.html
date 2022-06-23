@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #container {
+            margin-top: 35px;
+            min-width: 440px;
+        }
+
+        nav ul {
+            margin: 16px 0;
+            padding: 8px 0;
+
+            text-align: left;
+            font-weight: 400;
+
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        nav li {display: inline;
+            
+        
+        }
+
+        nav a {
+            padding: 10px 20px 10px;
+            font-size: 15px;
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+
+            transition: all 0.3s ease-out;
+        }
+
+        nav li.on a{
+            background-color: #8ac007;
+            color: #fff;
+            border-color: #8ac007;
+        }
+
+        .box {
+            display: none;
+
+            margin: 30px 0;
+            border-bottom: 4px solid #d4d4d4;
+            padding: 30px 0;
+
+            
+            font-size: 18px;
+            color: #333;
+            
+        }
+
+        .box.act {
+            display: block;
+            
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <nav>
+            <ul>
+                <li class="tab1"><a href="">HTML</a></li>
+                <li class="tab2"><a href="">CSS</a></li>
+                <li class="tab3"><a href="">JAVASCRIPT</a></li>
+                <li class="tab4"><a href="">JQUERY</a></li>
+            </ul>
+        </nav>
+        <div class="box html">subject: HTML</div>
+        <div class="box css">subject: CSS</div>
+        <div class="box javascript">subject: JAVASCRIPT</div>
+        <div class="box jquery">subject: JQUERY</div>
+    </section>    
+
+    <script>
+        const tab = document.querySelectorAll("nav ul li");
+        const on = document.querySelector("nav li.on a");
+        const box = document.querySelectorAll(".box");
+        const act = document.querySelector(".box.act");
+
+        console.log(tab);
+        console.log(on);
+        console.log(box);
+
+        tab[0].classList.add("on");
+        box[0].classList.add("act");
+        
+        for(let i =0; i < tab.length; i++){
+            
+            tab[i].onclick = (e) => {
+                e.preventDefault();
+                tab[i].classList.toggle("on");
+                box[i].classList.toggle("act");
+            }
+
+            tab[i].onmouseover = (e) => {
+                e.preventDefault();
+                tab[i].classList.toggle("on");
+                box[i].classList.toggle("act");
+            }
+
+            tab[i].onmouseout = (e) => {
+                e.preventDefault();
+                tab[i].classList.toggle("on");
+                box[i].classList.toggle("act");
+            }
+
+        }
+
+        
+    </script>
+</body>
+</html>
