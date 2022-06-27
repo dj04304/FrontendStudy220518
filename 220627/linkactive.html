@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox">
+    <span>링크 활성화</span>
+    <br>
+    <a href="https://www.naver.com/">네이버</a>
+
+    <script>
+        const checkbox = document.querySelector("input");
+        const link = document.querySelector("a");
+        
+        checkbox.onchange = (e) => {
+                let status = false; //status를 false로 잡아준다.
+                status = e.currentTarget.checked //현재 체크박스가 체크된것을 status에 담아준다.
+                
+                link.onclick = () => {
+                    if(!status){ //check됐을 때, preventDefault로 초기화 되는것을 막아서 링크활성화를 시킨다.
+                        link.style.color = "red"
+                        event.preventDefault();
+                    }else {
+                        link.style.color = "blue"  
+                    }
+                }
+        }
+
+
+    </script>
+</body>
+</html>

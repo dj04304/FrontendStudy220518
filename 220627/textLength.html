@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textLength</title>
+    <style>
+        textarea {
+            border: none;
+            resize: none;
+            outline: none;
+
+            border: 1px solid #141414;
+
+            width: 300px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+
+    <script>
+        const textarea = document.querySelector("textarea");
+        const h1 = document.querySelector("h1");
+        let timerId;
+        
+        textarea.onfocus = () => {
+            timerId = setInterval(() => {
+                const length = textarea.value.length; //textarea내의 글자 길이 값을 length변수에 전달.
+                h1.textContent = `글자수:  ${length}`
+            }, 50);
+        }
+
+        textarea.onblur = () => {
+            clearInterval(timerId);
+        }
+
+    </script>
+</body>
+</html>

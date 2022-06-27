@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" id="todo" placeholder="할 일을 입력해주세요.">
+    <button type="button" id="add-button">추가하기</button>
+    <div id="todo-list"></div>
+
+     <script>
+        const input = document.querySelector("#todo");
+        const todoList = document.querySelector("#todo-list");
+        const addButton = document.querySelector("#add-button");
+        console.log(input)
+        console.log(todoList)
+        console.log(addButton)
+        
+        let keyCount = 0; // remove할때 쉽게 제거하기 위해 만든 변수
+
+        //함수 선언
+        const addTodo = () => {
+            if(input.value.trim() === ""){ //비어있으면 alert값 실행
+                alert("할 일을 입력해주세요");
+                return;
+            }
+        
+
+        const item = document.createElement("div");
+        const checkbox = document.createElement("input");
+        const text = document.createElement("span");
+        const button = document.createElement("button");
+
+        const key = keyCount;
+        keyCount += 1; 
+
+        
+        item.setAttribute("data-key", key); //div 속성에 data-key = key 추가
+        item.appendChild(checkbox); //item 내에 checkbox, text, button 추가
+        item.appendChild(text);
+        item.appendChild(button);
+        todoList.appendChild(item); //생성한 div에 담은 값들을 html에 있는 div에 추가.
+
+       
+
+        checkbox.type = "checkbox" //input태그의 타입을 checkbox로 바꿔줌
+        checkbox.onchange = (e) => {
+            item.style.textDecoration = e.target.checked ? "line-through" : ''
+        }
+
+        text.textContent = input.value;
+
+        button.textContent = "제거하기";
+
+        button.onclick = () => {
+            removeTodo(key);
+        }
+
+        input.value = " ";
+
+    }
+
+        const removeTodo = (key) => {
+            const item = document.querySelector(`[data-key="${key}"]`);
+            todoList.removeChild(item);
+        }
+
+
+        //버튼을 눌렀을 때, 비어있으면 addTodo실행
+        addButton.onclick = () => {
+            addTodo();
+        }
+
+        input.onkeyup = () => {
+            if(window.event.keyCode == 13){
+                addTodo();
+            }
+        }
+
+     </script>
+</body>
+</html>
