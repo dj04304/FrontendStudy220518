@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exeption2</title>
+</head>
+<body>
+    
+    <script>
+        try {
+            willexcpt.method(); //예외가 발생하여 오류가 남
+            console.log("예외가 발생하여 실행하지 않는 문구"); //예외로 인하여 출력 x
+        } catch (exception) {
+            console.log("예외가 발생해도 실행되는 문구"); //예외가 일어나서 대신 출력되는 것
+        } finally{
+            console.log("반드시 실행되는 문구"); //finally는 예외처리와 상관없이 반드시 실행된다.
+        }
+    </script>
+</body>
+</html>

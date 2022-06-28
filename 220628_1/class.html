@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 700px;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid #141414;
+        }
+
+       th, td {
+            border: 1px solid #141414;
+            
+            width: 200px;
+            height: 50px;
+            
+            text-align: center;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>회원정보 리스트</h1>
+        <label for="input"></label>
+        <input type="text" class="input" placeholder="엔터를 입력하세요">
+        <button type="button" class="user-list-load-btn">정보 불러오기</button>
+        <button type="button" class="user-list-remove-btn">정보 삭제하기</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>usercode</th>
+                    <th>username</th>
+                    <th>korean</th>
+                    <th>english</th>
+                    <th>math</th>
+                    <th>sience</th>
+                    <th>provider</th>
+                </tr>
+            </thead>
+            <tbody class="students-table-list">
+                <tr>
+                    <td>20000000</td>
+                    <td>아이디</td>
+                    <td>비밀번호</td>
+                    <td>이름</td>
+                    <td>이메일</td>
+                    <td>권한</td>
+                    <td>OAuth2 그룹</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    
+    <script>
+        const students = []; // 배열 객체 선언
+        const studentsTableList = document.querySelector(".students-table-list");
+        console.log(studentsTableList);
+        students.push({usercode: 20000000, username: "구름", korean: 87, english: 98, math: 88, sience: 90, role: ["반장", "남자"]});
+        students.push({usercode: 20000001, username: "별이", korean: 82, english: 93, math: 78, sience: 92, role: ["부반장", "여자"]});
+        students.push({usercode: 20000002, username: "겨울", korean: 84, english: 94, math: 68, sience: 93, role: ["회장", "남자"]});
+        students.push({usercode: 20000003, username: "바다", korean: 85, english: 97, math: 38, sience: 50, role: ["부회장", "여자"]});
+
+        const studentsJson = JSON.stringify(students, null, 2); // JSON파일로 형 변환
+        console.log(studentsJson);
+        const studentsObj = JSON.parse(studentsJson);// JSON파일을 다시 object형식으로 변환
+        console.log(studentsObj);
+
+
+        load();
+
+        function load() {
+           
+            for(let i = 0; i < studentsObj.length; i++){
+                studentsTableList.appendChild(createTable(studentsObj[i]));
+            }
+        }
+
+
+        function createTable(studentsData){
+           let tr = `
+            <tr>
+                <td>${studentsData.usercode}</td>
+                <td>${studentsData.username}</td>
+                <td>${studentsData.korean}</td>
+                <td>${studentsData.english}</td>
+                <td>${studentsData.math}</td>
+                <td>${studentsData.sience}</td>
+                <td>${studentsData.role}</td>
+            </tr>
+        `;
+
+        return tr;
+        }
+        
+
+    </script>
+</body>
+</html>

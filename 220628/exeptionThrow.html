@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exeptionThrow</title>
+</head>
+<body>
+    
+    <script>
+    const test = (a, b) => {
+
+        if(b === 0) {
+            throw "0으로 나눌 수 없습니다."
+            console.log("예외 발생");
+        }else {
+            return a / b;
+        }
+    }
+        console.log(test(10, 2)); // 5출력
+        console.log(test(10, 0)); //0으로 나눌 수 없다는 문구가 출력된다.
+       
+    </script>
+</body>
+</html>

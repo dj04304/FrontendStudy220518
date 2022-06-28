@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class2</title>
+</head>
+<body>
+    
+    <script>
+        const students = [];
+
+        students.push({학번: 20000000, 이름: "구름", 국어: 87, 영어: 98, 수학: 88, 과학: 90, 직급: ["반장", "남자"]});
+        students.push({학번: 20000001, 이름: "별이", 국어: 82, 영어: 93, 수학: 78, 과학: 92, 직급: ["부반장", "여자"]});
+        students.push({학번: 20000002, 이름: "겨울", 국어: 84, 영어: 94, 수학: 68, 과학: 93, 직급: ["회장", "남자"]});
+        students.push({학번: 20000003, 이름: "바다", 국어: 85, 영어: 97, 수학: 38, 과학: 50, 직급: ["부회장", "여자"]});
+    
+        let output = "학번\t\t이름\t직급\t\t총점\t평균\n"; // \t 는 수평 탭을 의미한다.
+
+        // for(const s of students){
+        //     const sum = s.국어 + s.영어 + s.수학 + s.과학
+        //     const average = sum / 4;
+        //     output += `${s.학번}\t${s.이름}\t${s.직급}\t${sum}점\t${average}점\n` // \n은 줄 바꿈을 의미한다.
+        // }
+       
+        for(let i = 0; i < students.length; i++){
+            const sum = students[i].국어 + students[i].영어 + students[i].수학 + students[i].과학
+            const average = sum / 4;
+            output += `${students[i].학번}\t${students[i].이름}\t${students[i].직급}\t${sum}점\t${average}점\n` // \n은 줄 바꿈을 의미한다.
+        }
+
+        console.log(output);
+    </script>
+</body>
+</html>

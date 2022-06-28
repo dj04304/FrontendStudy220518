@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exeption3</title>
+</head>
+<body>
+    
+    <script>
+        // try {
+        //     alert("a 위치입니다.");
+        //     throw "예외발생" //예외를 강제로 발생시키는 구문 throw
+        // } catch (exception) {
+        //     alert("b 위치입니다.");
+        // } finally{
+        //     alert("c 위치입니다.");
+        // }
+
+        const test = () => {
+            try {
+                alert("a 위치입니다.")
+                throw "예외 발생!"
+            } catch (exception) {
+                alert("b 위치입니다.")
+                return;
+            } alert ("c 위치입니다.") 
+        }   
+        test(); //return 으로 인해 a 와 b는 출력이되나, c는 출력이 되지 않는다.
+
+        const test2 = () => {
+            try {
+                console.log("a 위치 출력")
+                throw "예외 발생!"
+            } catch (exception) {
+                console.log("b 위치 출력")
+                return;
+            } finally {
+                console.log("c 위치 출력")
+            }
+        }
+        test2(); //finally로 인해 return을 해도 a 와 b와 c 모두 출력된다.
+       
+    </script>
+</body>
+</html>

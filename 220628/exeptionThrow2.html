@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exeptionThrow2</title>
+</head>
+<body>
+    
+    <script>
+
+    //javaScript는 값이 비거나 찾지 못할 때 NaN이나 undefined가 출력되기 때문에 오류를 인지시켜 정확하게 잡아 줄 필요가 있다.
+    const test1 = (object) => {
+        console.log(object.a + object.b);
+    }
+
+    test1({}); //NaN이 출력
+
+    console.log("-----------------------------------------------------------------------------------------");
+
+    const test2 = (object) => {
+        if((object.a !== undefined) && (object.b !== undefined)){ //a가 undefined가 아니고 b도 undefined가 아닐 때
+            console.log(object.a + object.b);
+        } else {
+            throw new Error("a와 b의 속성이 비어있습니다.");
+        }
+    }
+
+    test2({}); //a 와 b의 속성이 비어있다는 문구가 출력
+     
+       
+    </script>
+</body>
+</html>
