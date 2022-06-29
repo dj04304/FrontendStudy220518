@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>columnMenu</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul, li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 150px;
+        }
+
+        .container > ul {
+        }
+
+        .container > ul > li {
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+
+            position: relative;
+
+            width: 150px;
+            /* height: 40px; */
+
+            font-size: 15px;
+            text-align: center;
+
+            text-transform: uppercase;
+        }
+
+        .container > ul > li:last-child {
+            border-right: 0px;
+        }
+
+        .container > ul > li > a {
+            display: block;
+            
+            width: 100%;
+
+            line-height: 40px;
+
+            background-color: #eaeaea;
+            color: #666;
+            transition:background 0.4s, color 0.4s;
+        }
+
+        .container > ul > li:hover > a,.over {
+            font-weight: 600;
+            background: #8ac007;
+            color: #fff;
+        }
+
+        .sub {
+            display: none;
+
+            /* position: absolute;
+            top:  40px;
+            left: 0px; */
+
+            width: 100%;
+        }
+
+        .sub li {
+            border: 1px solid #ccc;
+        }
+         
+        .sub a {
+            display: block;
+            padding: 10px;
+            color: #666;
+            background-color: #fff;
+        }
+
+        .sub a:hover, .sub a:focus {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="#">main1</a>
+                <ul class="sub">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">main2</a>
+                <ul class="sub">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">main3</a>
+                <ul class="sub">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">main4</a>
+                <ul class="sub">
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                    <li><a href="#">sub4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        const menuList = document.querySelectorAll(".container > ul > li");
+        const submn = document.querySelectorAll(".sub")
+        const container = document.querySelector(".container")
+        console.log(menuList);
+        console.log(submn);
+
+        for(let i = 0; i < menuList.length; i++){
+            menuList[i].onclick = () => {
+                
+                for(let j = 0; j < submn.length; j++){
+                    console.log(submn[j])
+                    if(submn[j].style.display == "block"){
+                        submn[j].style.display = "none";
+                    }
+                }
+                    
+                    const link = menuList[i].children[0];
+                    link.classList.add("over")
+                    const sub = menuList[i].children[1];
+                    sub.style.display = "block"
+                }
+            }
+                
+            container.onmouseleave = () => {
+                
+                for(let j = 0; j < submn.length; j++){
+                console.log(submn[j])
+                if(submn[j].style.display == "block"){
+                    submn[j].style.display = "none";
+                }
+            }
+
+        }
+
+            // menuList[i].onmouseleave = () => {
+            //         const link = menuList[i].children[0];
+            //         link.classList.remove("over");
+
+            //         const sub = menuList[i].children[1];
+            //         sub.style.display = "none";
+            //     }
+            
+        
+    </script>
+</body>
+</html>
