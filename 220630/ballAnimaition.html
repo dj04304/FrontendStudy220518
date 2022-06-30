@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballAnimaition</title>
+    <style>
+        *{ 
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 900px;
+        }
+
+        .container {
+            margin: 40px; width: 500px;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            
+            border-radius: 50%;
+
+            background-color: #8ac007;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+
+    <script>
+        const body = document.querySelector("body");
+        const ball = document.querySelector(".ball");
+
+        let num = 0; //위치값 변수
+        let currentX = 0; //현재 위치 변수
+        let targetX = 0; //목표 위치 변수
+        let moving = false; //현재 움직이는 상태와 관련된 변수
+
+        console.log(body);
+        console.log(ball);
+
+        
+        body.onwheel = (e) => {
+            // alert("test");
+            if(moving){
+                return; // 이전에 동작이 되는 상태라면 움직임 지시 유무
+            }
+
+            let delta = e.wheelDeltaY; // + - 상하 이동 분류
+            console.log(delta)
+           
+            if(delta > 0){
+                if(num > 0){ //up
+                    num -= 1;    
+                }
+            }else {
+                //down
+                if(num < 20){
+                    num += 1;
+                }
+            }
+            
+            
+            moving = true;
+            targetX = 100*num;
+
+            const timer = setInterval(() => {
+                if(targetX > currentX){//currentX(시작), targetX(최종위치)
+                    if(Math.abs(targetX - currentX) > 5){ //시작 //Math.abs는 절대값이다.
+                        currentX += 5;
+                    }else { //끝
+                        currentX = targetX;
+                        clearInterval(timer);
+                        moving = false;
+                    }
+                }else{  
+                    if(Math.abs(targetX - currentX) > 5){ //시작
+                        currentX -= 5;
+                    }else{//끝
+                        currentX = targetX;
+                        clearInterval(timer);
+                        moving = false;
+                    }
+                }
+
+                ball.style.marginLeft = currentX + "px";
+            }, 5);
+        }
+
+        // 키보드 function
+        body.onkeydown = () => {
+                if(moving) {
+                    return;
+                }
+                
+                if(window.event.keyCode == 37) {
+                    if(num > 0){ //up
+                        num -= 1;    
+                    }
+
+                }else if(window.event.keyCode == 39){
+                        //down
+                    if(num < 20){
+                        num += 1;
+                    }   
+                }
+
+                moving = true;
+                targetX = 100*num;
+
+                const timer = setInterval(() => {
+                    if(targetX > currentX){//currentX(시작), targetX(최종위치)
+                        if(Math.abs(targetX - currentX) > 5){ //시작 //Math.abs는 절대값이다.
+                            currentX += 5;
+                        }else { //끝
+                            currentX = targetX;
+                            clearInterval(timer);
+                            moving = false;
+                        }
+                    }else{  
+                        if(Math.abs(targetX - currentX) > 5){ //시작
+                            currentX -= 5;
+                        }else{//끝
+                            currentX = targetX;
+                            clearInterval(timer);
+                            moving = false;
+                        }
+                    }
+
+                    ball.style.marginLeft = currentX + "px";
+                }, 5);          
+        }
+
+    </script>
+</body>
+</html>
