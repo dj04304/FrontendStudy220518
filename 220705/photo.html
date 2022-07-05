@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        button {
+            border: none;
+            padding: 5px 15px;
+
+            background-color: #666;
+
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        button:hover{
+            background-color: #888;
+        }
+
+        .gallery {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="append" title="append" type="button">append</button>
+        <div class="gallery"></div>
+    </div>
+
+    <script>
+        const btn = document.querySelector("button");
+        let gallery = document.getElementsByClassName("gallery")[0];
+        let n = 0; //이미지 변화값
+        console.log(btn)
+
+        btn.onclick = () => {
+            let photo = document.createElement("img"); //img속성만듦
+
+            photo.setAttribute("src", "images/zoo" + (n+1)+".jpg"); //src = images/zoo(n+1).jpg
+            photo.setAttribute("alt", "zoo" + (n+1)); //alt = zoo(n+1)
+            console.log(photo);
+
+            gallery.appendChild(photo); //gallery 에 photo 내용을 appendChild해줌
+            n = (n+1)%3 //1, 2, 0
+            console.log(n)
+        }
+    </script>
+</body>
+</html>

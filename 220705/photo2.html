@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo2</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        button {
+            border: none;
+            padding: 5px 15px;
+
+            background-color: #666;
+
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        button:hover{
+            background-color: #888;
+            color: aliceblue;
+        }
+
+        .gallery {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+        }
+
+        .gallery img {
+
+            width: 200px;
+        }
+
+        .zoo {
+            opacity: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="prepend" title="prepend" type="button">prepend</button>
+        <button id="append" title="append" type="button">append</button>
+        <div class="gallery">
+            <img src="images/zoo1.jpg" alt="zoo1">
+            <img src="images/zoo2.jpg" alt="zoo2">
+            <img src="images/zoo3.jpg" alt="zoo3">
+        </div>
+    </div>
+
+    <script>
+        const appednBtn = document.querySelector("#append");
+        const prependBtn = document.querySelector("#prepend");
+        const galleryImg = document.querySelectorAll(".gallery img");
+        let gallery = document.getElementsByClassName("gallery")[0];
+        let n = 0; //이미지 변화값
+        console.log(appednBtn);
+        console.log(prependBtn);
+        console.log(galleryImg);
+
+        //prepend
+        prependBtn.onclick = () => {
+           //노드삭제, 새로운 노드 생성, 새로운 노드 추가
+        //    let lastChild = gallery.lastElementChild;
+        //    console.log(lastChild);
+
+        //    let src = lastChild.getAttribute("src");
+        //    let alt = lastChild.getAttribute("alt");
+
+        //    console.log("src, alt: " + src, alt);
+
+        //    gallery.removeChild(lastChild); //노드 삭제
+
+        //    let newNode = document.createElement("img");
+        //    newNode.setAttribute("src", src);
+        //    newNode.setAttribute("alt", alt);
+
+        //    let firstChild = gallery.firstElementChild;
+        //    console.log("firstChild: " + firstChild)
+        //    gallery.insertBefore(newNode, firstChild);
+
+           let firstChild = gallery.firstElementChild;
+           let newNode = firstChild.cloneNode(true);
+           gallery.removeChild(firstChild);
+           gallery.appendChild(newNode);
+        }
+
+        //append
+        appednBtn.onclick = () => {
+           //노드삭제, 새로운 노드 생성, 새로운 노드 추가
+           let firstChild = gallery.firstElementChild;
+           console.log(firstChild);
+
+           let src = firstChild.getAttribute("src");
+           let alt = firstChild.getAttribute("alt");
+
+           console.log("src, alt: " + src, alt);
+
+           gallery.removeChild(firstChild); //노드 삭제
+
+           let newNode = document.createElement("img");
+           newNode.setAttribute("src", src);
+           newNode.setAttribute("alt", alt);
+
+           let lastChild = gallery.lastElementChild;
+           console.log("firstChild: " + lastChild)
+           gallery.appendChild(newNode);
+        }
+
+        for(let i = 0; i < galleryImg.length; i++){
+            galleryImg[i].onmouseover = () => {
+                galleryImg[i].classList.toggle("zoo")
+            }
+
+            galleryImg[i].onmouseleave = () => {
+                galleryImg[i].classList.toggle("zoo")
+            }
+        }
+       
+    </script>
+</body>
+</html>
