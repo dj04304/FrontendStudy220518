@@ -1,0 +1,17 @@
+import React from 'react';
+import './App.css';
+//import Counter from './component/counter';
+//import Input from './component/input';
+import MultiInput from './component/multiInput';
+
+function App() {
+  return (
+   <div>
+    {/* <Counter/> */}
+    {/* <Input/> */}
+    <MultiInput/>
+   </div>
+  );
+}
+
+export default App;
