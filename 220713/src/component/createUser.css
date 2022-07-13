@@ -1,0 +1,9 @@
+.input-group {
+    display: flex;
+    padding: 20px 0px;
+}
+
+.input-tag {
+    display: flex;
+    flex-direction: column;
+}
