@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+
+  font-size: 14px;
+  color: #141414;
+}
+
+ul {
+  list-style-type: none;
+}
+

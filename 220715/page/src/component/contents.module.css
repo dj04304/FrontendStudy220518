@@ -1,0 +1,32 @@
+.container {
+    margin: 0px auto;
+
+    width: 1500px;
+
+}
+
+.mainText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 200px;
+}
+
+.mainText h4 {
+    font-size: 66px;
+    font-family: 100;
+}
+
+.mainText h2 {
+    font-size: 66px;
+}
+
+.main_mid_content {
+    display: flex;
+}
+
+.subText {
+
+}
