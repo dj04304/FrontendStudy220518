@@ -1,0 +1,19 @@
+.container {
+    
+    width: 1500px;
+}
+
+
+.bestItem {
+    float: left;
+    
+}
+
+.bestItemIn {
+    display: flex;
+    flex-direction: column;
+}
+
+.bestItemIn img {
+    width: 200px;
+}
