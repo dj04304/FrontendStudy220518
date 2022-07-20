@@ -1,0 +1,105 @@
+.mainImg {
+    width: 100%;
+    height: 250px;
+
+    background-color: #ccc;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.contents_in {
+    width: 1500px;
+    height: 2000px;
+
+    background-color: blanchedalmond;
+}
+
+.ttl {
+    box-sizing: border-box;
+    padding: 80px 0px 0px 0px;
+
+    width: 100%;
+    height: 200px;
+
+    background-color: yellow;
+
+    border-bottom: 3px solid #000;
+}
+
+.ttl h3 {
+    font-size: 20px;
+}
+
+.items {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.items_in {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 20px 0px 0px 0px;
+}
+
+
+/* Goods CSS*/
+.goods {
+    width: 400px;
+    
+    text-align: center;
+}
+
+.goods img {
+    cursor: pointer;
+}
+
+.goods_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 15px 15px;
+
+    height: 90px;
+}
+
+.goods_info button {
+
+    width: 60px;
+    height: 25px;
+
+    border: 1px solid #141414;
+    border-radius: 50px;
+
+    background-color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.goods_text {
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.day {
+    font-size: 16px;
+    color: #666;
+
+    cursor: pointer
+}
+
+.contents {
+
+    
+}
