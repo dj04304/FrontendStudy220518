@@ -1,0 +1,116 @@
+/* contents01 */
+
+.contents {
+    width: 100%;
+    height: 1000px;
+}
+
+
+.contents::before{
+    margin: none;
+    width: 100%; 
+    height: 1500px;
+    content: "";
+    position: absolute;
+    background: url(/public/img/main_mid_bg_02_new.jpg) no-repeat 0 0;
+    opacity: 100%;
+    z-index: -9999;
+}
+
+.contents_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+
+    width: 1500px;
+    height: 1000px;
+}
+
+
+.who_we_Are {
+    padding-bottom: 10px;
+
+    font-size: 65px;
+}
+
+.contents_imgGroup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 1280px;
+}
+
+.man {
+    width: 300px;
+    height: 330px;
+}
+
+.interview {
+    padding-bottom: 25px;
+
+    font-size: 18px;
+    color: #cad401;
+}
+
+.contents_textGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.contents_textGroup h2 {
+    padding-bottom: 65px;
+
+    font-size: 45px;
+}
+
+.team {
+    font-size: 18px;
+    color: #666;
+}
+
+.contents_textGroup h3 {
+    margin-bottom: 20px;
+
+    font-size: 33px;
+}
+
+.contents_textGroup h3::after {
+
+}
+
+.contents_text {
+    padding-left: 18px;
+
+    font-size: 18px;
+    color: #222;
+}
+
+.arrow_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: auto;
+    padding-top: 15px;
+
+    width: 160px;
+}
+
+.arrow_group p {
+    font-size: 20px;
+    
+    cursor: pointer;
+}
+
+.arrow_group img {
+    cursor: pointer;
+}
+
+.arrow_line {
+    width: 1px;
+    height: 10px;
+
+    background-color: #666;
+}
