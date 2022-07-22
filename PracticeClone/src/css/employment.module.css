@@ -1,0 +1,201 @@
+/* Careers */
+.careers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0px auto;
+    padding-top: 120px;
+
+    width: 1500px;
+
+}
+
+.careers_text {
+    position: relative;
+    top: -40px;
+    right: 340px;
+
+    width: 600px;
+    height: 140px;
+
+    background-color: #fff;
+}
+
+.careers_text_in {
+    padding-top: 50px;
+    padding-right: 20px;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Employment */
+
+.employment {
+    padding-top: 120px;
+    
+    width: 100%;
+}
+
+.employment_in {
+    margin: 0px auto;
+
+    width: 1500px;
+}
+
+.employment_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.employment_menu h2{
+    font-size: 65px;
+}
+
+ /* .employment_menu {
+
+    float: right;
+
+    width: 190px;
+    height: 20px;
+} */
+
+.employment_menu_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 200px;
+}
+
+.employment_menu_group span{
+    font-size: 15px;
+    color: #666;
+}
+
+.employment_menu_group span:after {
+    content: ">"; 
+    position: absolute; 
+    top: 153px; 
+    right: 327px;
+
+    font-size: 15px;
+    color: #666;
+} 
+
+.employment_menu_group span:nth-child(2)::after {
+    content: ">"; 
+    position: absolute; 
+    top: 153px; 
+    right: 260px;
+
+    font-size: 15px;
+    color: #666;
+} 
+
+.employment_text {
+    margin: 0px auto;
+
+    width: 1280px;
+    height: 135px;
+
+    font-size: 25px;
+    font-weight: 100;
+    
+}
+
+/* employment 2 */
+
+.culture {
+    
+}
+
+.culture_title {
+    margin: 0px auto;
+
+    padding: 240px 0px;
+
+    width: 1500px;
+    font-size: 55px;
+}
+
+.culture_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 800px;
+
+    background-color: #f3f3f3;
+
+}
+
+.culture_group_in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0px auto;
+
+    width: 1500px;
+
+}
+
+.culture_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1200px; 
+}
+
+.culture_round li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 20px;
+
+    width: 290px;
+    height: 290px;
+
+    border-radius: 50%;
+    border: 5px solid #ccc;
+
+    background-color: #fff;
+}
+
+.culture_round div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 200px;
+}
+
+.culture_round h2{
+    font-size: 22px;
+}
+.culture_round p{
+
+    font-size: 18px;
+    color: #888;
+
+    text-align: center;
+}
+.culture_round span{
+
+    padding-bottom: 30px;
+
+    font-size: 15px;
+    color: #888;
+
+    text-align: center;
+}

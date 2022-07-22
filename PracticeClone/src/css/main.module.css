@@ -1,14 +1,16 @@
+
 video {
     padding-top: 70px;
 
     width: 100%;
 }
 
+
 .main {
     margin: 0px auto;
 
-
-    width: 1500px;    
+    width: 1500px;
+    background-color: #fff;    
 }
 
 .main_title {
@@ -59,91 +61,116 @@ video {
     font-size: 30px;
 }
 
-/* contents01 */
+.news {
+    margin-top: 350px;
 
-.contents {
-    margin: 0px auto;
-    
-    width: 1500px;
+    width: 100%;
+    height: 80px;
+
+    background-color: #fff;
 }
 
-.who_we_Are {
-    padding-bottom: 10px;
-
-    font-size: 65px;
-}
-
-.contents_imgGroup {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    width: 1280px;
-}
-
-.man {
-    width: 300px;
-    height: 330px;
-}
-
-.interview {
-    padding-bottom: 25px;
-
-    font-size: 18px;
-    color: #cad401;
-}
-
-.contents_textGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-.contents_textGroup h2 {
-    padding-bottom: 65px;
-
-    font-size: 45px;
-}
-
-.team {
-    font-size: 18px;
-    color: #666;
-}
-
-.contents_textGroup h3 {
-    margin-bottom: 20px;
-
-    font-size: 33px;
-}
-
-.contents_textGroup h3::after {
-
-}
-
-.contents_text {
-    padding-left: 18px;
-
-    font-size: 18px;
-    color: #222;
-}
-
-.arrow_group {
+.news_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    margin-left: auto;
-    padding-top: 15px;
+    margin: 0px auto;
+    padding-top: 40px;
 
-    width: 160px;
+    width: 1500px;
+
 }
 
-.arrow_group p {
-    font-size: 20px;
+.news_title h2{ 
+    font-size: 65px;
 }
 
-.arrow_line {
-    width: 1px;
-    height: 10px;
+.more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    background-color: #666;
+    width: 90px;
+
+    cursor: pointer;
 }
+
+.more p{
+    font-size: 24px;
+    font-weight: 700;
+
+}
+
+/* content 4 */
+
+.career {
+    margin-top: 350px;
+
+    width: 100%;
+    height: 80px;
+
+    background-color: #fff;
+}
+
+.career_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0px auto;
+
+    width: 1500px;
+
+}
+
+.career_title h2{ 
+    font-size: 65px;
+}
+
+/* video controller */
+
+.controller {
+    position: absolute;
+
+    top: 800px;
+    right: 300px;
+
+    width: 1280px;
+    height: 100px;
+
+}
+
+.controller_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: 90px;
+}
+
+.controller_btn {
+    cursor: pointer;
+}
+
+.controller_bar {
+    width: 1280px;
+    height: 2px;
+
+    background-color: #fff;
+}
+
+.controller_page {
+    margin-top: -20px;
+    
+    color: #fff;
+}
+
+.controller_page span {
+
+    color: #ffffff66;
+}
+
+
+
