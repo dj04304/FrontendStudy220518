@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link, Route } from 'react-router-dom';
 //CSS
 import './App.css';
 //JSX
+
 import MainCom from './components/main';
 import NexonGames from './components/nexonGames';
 import Games from './components/games';
@@ -10,6 +11,7 @@ import Employment from './components/employment';
 import Investment from './components/investment';
 import News from './components/news';
 import Footer from './components/footer';
+import Fulldown from './components/fulldown';
 
 
 //import '../static/css/header.css'
@@ -18,6 +20,11 @@ import Footer from './components/footer';
 //yarn add styled-components
 
 function App() {
+
+  
+  
+
+
   return (
     <div>
       {/* 상단 부분 */}
@@ -39,6 +46,8 @@ function App() {
               <p>ENG</p>
           </div>
         </div>
+          {/* 풀다운 메뉴 */}
+         <Fulldown/>
       </div>
 
       {/* 메인 부분 */}

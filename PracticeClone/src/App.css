@@ -79,3 +79,51 @@
   background-color: #666;
 }
 
+/* 풀다운 메뉴 */
+
+.fulldownNav {
+  position: absolute;
+  top: 70px;
+  
+  width: 100%;
+  height: 300px;
+  
+  background-color: #f3f3f3;
+
+  display: none;
+
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.fulldownNav.on{
+  opacity: 1;
+}
+
+
+
+.fulldownNav_in {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 15px auto;
+  width: 850px;
+
+}
+
+.fulldownNav ul{
+  height: 200px;
+}
+
+.fulldownNav li{
+  display: flex;
+  justify-content: space-between;
+
+  margin-left: 50px;
+  height: 40px;
+  
+  font-size: 15px;
+  color: #666;
+
+  cursor: pointer;
+}

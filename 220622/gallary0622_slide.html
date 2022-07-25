@@ -84,7 +84,7 @@
             height: 400px;
 
             opacity: 0;
-            transition: opacity 0.4s;
+            transition: 0.4s;
         }
 
         .picture ul li.act {
@@ -137,9 +137,12 @@
         const picture = document.querySelector(".picture ul");
         const pictureList = document.querySelectorAll(".picture li");
 
+                
+
         for(let i = 0; i < controller.length; i++){ //controller 의 크기만큼 반복
             let n = 0; //n 변수 선언
-            controller[i].index = i; // controller[i].index 에 i의 값을 담는다.
+            controller[i].index = i; // controller[i].index 에 i의 값을 담는다. controller[i]는 li값이기 때문에 .index하여 index값을 가져올 필요가 있다.
+            console.log(controller[i].index)
 
             controller[i].onclick = (e) => { // onclick 했을 때의 기능
                 e.preventDefault(); // submit과 동시에 새로 이동되는 것을 막아주는 역할을 한다.
@@ -150,7 +153,7 @@
                 //버튼의 모양(on클래스) 바꿔주는 반복문
                 for(let j = 0; j < controller.length; j++){ //controller의 크기만큼 반복
                     if(j == n){ //j 가 n의 값과 같을 때 add 아니면 remove
-                        controller[j].classList.add("on")
+                        controller[j].classList.add("on") 
                         pictureList[j].classList.add("act")
                     }else {
                         controller[j].classList.remove("on")

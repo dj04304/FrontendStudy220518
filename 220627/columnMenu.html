@@ -131,15 +131,18 @@
         const menuList = document.querySelectorAll(".container > ul > li");
         const submn = document.querySelectorAll(".sub")
         console.log(menuList);
+        console.log(submn);
 
         for(let i = 0; i < menuList.length; i++){
             menuList[i].onclick = () => {
                 
                 for(let j = 0; j < submn.length; j++){
+                    console.log(submn[j])
                     if(submn[j].style.display == "block"){
                         submn[j].style.display = "none";
                     }
                 }
+                    
                     const link = menuList[i].children[0];
                     link.classList.add("over")
                     const sub = menuList[i].children[1];

@@ -1,9 +1,46 @@
 import React from "react";
+import styles from '../css/nexonGames.module.css';
+
 
 function NexonGames() {
     return(
-        <div> 
-            nexonGames
+        <div className={styles.main}>
+            <div className={styles.title_img}>
+                <div className={styles.title_img_in}>
+                    <div className={styles.span_group}>
+                        <span><img src="/img/home_visual_white.png" alt="" /></span>
+                        <span>HOME</span>
+                        <span>넥슨게임즈</span>
+                    </div>
+                </div>
+                <div className={styles.title_img_text}>
+                    <h3>넥슨게임즈</h3>
+                    <p>일상을 뛰어넘는 참신한 재미를 만듭니다.</p>
+                    <p>놀라운 경험을 선사하는 새로운 세계를 창조합니다.</p>
+                </div>
+            </div>
+            <div className={styles.content_info_text}>
+                <p>
+                넥슨게임즈는 넥슨 컴퍼니의 게임 개발사로서, PC, 모바일, 콘솔 플랫폼을 아우르는<br /> 
+                다양한 장르의 게임을 개발, 국내는 물론 세계 각국에 선보이고 있습니다.<br />
+                넥슨게임즈는 기존의 게임보다 한층 돋보이는 재미를 담은 다양한 신작들을 통해 한국을 넘어<br />
+                세계로부터 주목받는 글로벌 개발사로 성장해 나갈 것입니다.
+                </p>
+                <span></span>
+            </div>
+            <h2 className={styles.vision}>우리의 비전</h2>
+            <div className={styles.vision_img_group}>
+                <img src="/img/sub_visual_bg_dark.png" alt="" />
+                <h3>We make games better</h3>
+                <p>
+                우리는 더 좋은 게임(Better Game)을 만들고 세상에 보여주기 위해 모였습니다.
+                유저가 더 즐겁게 게임을 즐길 수 있도록, 세상보다 먼저 한 발자국 더 나아갑니다.
+                넥슨게임즈의 방식으로 더 좋은 게임을 만듭니다.
+                </p>
+            </div>
+            <div>
+                <h2>게이머와 함께 걸어온 길</h2>
+            </div>
         </div>
     );
 }

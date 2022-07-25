@@ -8,17 +8,20 @@
     <title>Tabmenu</title>
     <script>
         $(document).ready(function(){
-            
+            var tab = $("#tabmenu > div");
+            //먼저 숨겨주고 0번 index만 보여준다.
             $("#tabmenu > div").hide();
             $("#tabmenu > div").eq(0).show();
 
             $(".menu > li").click(function(){
                 var i = $(this).index();
                 console.log(i);
-                $("#tabmenu > div").hide();
-                $("#tabmenu > div").eq(i).fadeIn();
+                //div를 숨기면서, index값을준다.
+                tab.hide();
+                tab.eq(i).show();
             });
-        
+
+           
         });
     </script>
     <style>
