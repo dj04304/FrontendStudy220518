@@ -1,0 +1,416 @@
+.main {
+    width: 100%;
+}
+
+.main_in {
+    margin: 0px auto;
+    padding-top: 70px;
+    width: 1500px;
+}
+
+.main_img {
+    background: url(/public/img/nexongames_bg.png);
+    height: 610px;
+}
+
+.main_img_in {
+    
+    padding-top: 50px;
+    
+    width: 1300px;
+
+}
+
+.span_group {
+    display: flex;
+    justify-content: space-between;
+    
+    float: right;
+
+    width: 170px;  
+}
+
+.span_group span {
+    
+    font-size: 15px;
+    color: #fff;
+}
+
+.span_group span:after {
+    content: ">"; 
+    position: absolute; 
+    top: 120px; 
+    right: 480px;
+
+    font-size: 15px;
+    color: #fff;
+} 
+
+.main_img_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0px auto;
+
+    width: 1300px;
+    height: 500px;
+    
+    text-align: center;
+}
+
+.main_img_text h3{
+    padding-bottom: 20px;
+
+    font-size: 66px;
+    color: #fff;
+}
+
+.main_img_text p{
+
+    font-size: 32px;
+    font-weight: 100;
+    color: #fff;
+}
+
+.content_info_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 50px;
+
+    width: 1500px;
+    height: 400px;
+}
+
+.content_info_text p {
+    font-size: 28px;
+    text-align: center;
+}
+
+.content_info_text span {
+    width: 1px;
+    height: 50px;
+
+    background-color: black;
+}
+
+.title {
+    padding: 50px 0 50px;
+
+    font-size: 66px;
+    text-align: center;
+}
+
+.vision_img {
+    background: url(/public/img/sub_visual_bg_dark.png);
+    height: 610px;
+}
+
+.vision_img_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 550px;
+
+}
+
+.vision_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0px auto;
+
+    width: 1300px;
+
+}
+
+.vision_title span {
+    
+    width: 300px;
+    height: 1px;
+
+    background-color: #ffffff80;
+}
+
+.vision_title h3 {
+    
+    font-size: 55px;
+    color: #fff;
+}
+
+.vision_text {
+    padding-top: 30px;
+
+    text-align: center;
+
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 2px 2px 1px #000;
+}
+
+/* road section */
+
+.road_section {
+    margin: 0px auto;
+
+    width: 1500px;
+}
+
+.road_section h3 {
+    
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.road_section p {
+
+    font-size: 24px;
+    font-weight: 100;
+    color: #666;
+}
+
+.road_section span {
+
+    font-size: 24px;
+    font-weight: bold;
+    color: #191b1d;
+}
+
+/* 서든어택 */
+
+.road01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1200px;
+}
+
+.road01_in {
+
+}
+
+.road01_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding-left: 50px;
+
+    height: 250px;
+
+}
+
+.line_img01 {
+    position: relative;
+
+    top: 50px;
+    right: 25px;
+}
+
+/* HIT */
+
+.road02 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 45px;
+    
+
+    width: 1200px;
+}
+
+.road02_in {
+
+
+}
+
+.road02_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-right: 50px;
+    
+    height: 200px;
+
+    text-align: right;
+}
+
+.line_img02 {
+    position: relative;
+
+    top: 100px;
+    left: 120px;
+}
+
+/* AXE */
+
+.road03 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1200px;
+}
+
+.road03_in {
+
+}
+
+.road03_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding-left: 50px;
+
+    height: 250px;
+
+}
+
+.line_img03 {
+    position: relative;
+
+    top: 40px;
+    right: 60px;
+}
+
+/* 오버히트 */
+
+.road04 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 10px;
+    
+    width: 1200px;
+}
+
+.road04_in {
+
+
+}
+
+.road04_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-right: 50px;
+    
+    height: 150px;
+
+    text-align: right;
+}
+
+.line_img04 {
+    position: relative;
+
+    top: 120px;
+    left: 65px;
+}
+
+/* V4 */
+
+.road05 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1200px;
+}
+
+.road05_in {
+
+}
+
+.road05_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding-left: 50px;
+
+    height: 250px;
+
+}
+
+.line_img05 {
+    position: relative;
+
+    top: 45px;
+    right: 42px;
+}
+
+/* 블루아카이브 */
+
+.road06 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    margin: 22px 0px 0px 350px;
+    
+    width: 1200px;
+}
+
+.road06_in {
+
+
+}
+
+.road06_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-right: 50px;
+    
+    height: 150px;
+
+    text-align: right;
+}
+
+/* 연락처 */
+
+.address_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0px auto;
+    padding-bottom: 50px;
+
+    width: 450px;
+}
+
+.address_group li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.address_group span {
+
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
