@@ -40,6 +40,7 @@ function App() {
             <li><Link to='/components/investment'>투자정보</Link></li>
             <li><Link to='/components/news'>미디어</Link></li>
           </ul>
+         
           <div className='language'>
               <p>KOR</p>
               <span></span>

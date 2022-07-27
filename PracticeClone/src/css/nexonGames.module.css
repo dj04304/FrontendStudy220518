@@ -349,6 +349,18 @@
 
 }
 
+.road05_text_group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.road05_span_group {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .line_img05 {
     position: relative;
 

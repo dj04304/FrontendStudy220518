@@ -12,7 +12,7 @@ function NexonGames() {
             <div className={styles.main_img}>
                 <div className={styles.main_img_in}>
                     <div className={styles.span_group}>
-                        <span><img src="/img/home_visual_white.png" alt="" /></span>
+                        <span><img src="/img/home_visual_white.png" alt="#" /></span>
                         <span>HOME</span>
                         <span>넥슨게임즈</span>
                     </div>
@@ -107,17 +107,19 @@ function NexonGames() {
                         <div className={styles.road05_in}>
                             <div className={styles.road05_text}>
                                 <h3>V4</h3>
-                                <div>
-                                    <p>2020년 대한민국 게임대상</p> <br />
-
-                                    <span>대상(대통령상)</span>
-                                    <span>사운드 분야 기술·창작상</span>
-                                    <span>그래픽 분야 기술·창작상</span>
-                                    <span>우수 개발자상(기획/시나리오 부문)</span>
-
-                                    <p>한국, 일본, 태국 구글플레이 및 애플 앱스토어 <br />
-                                    <span>인기 순위 1위 기록</span>
-                                    </p>
+                                <div className={styles.road05_text_group}>
+                                    <p>2020년 대한민국 게임대상</p>
+                                    <div className={styles.road05_span_group}>
+                                        <span>대상(대통령상)</span>
+                                        <span>사운드 분야 기술·창작상</span>
+                                        <span>그래픽 분야 기술·창작상</span>
+                                        <span>우수 개발자상(기획/시나리오 부문)</span>
+                                    </div>
+                                    <div>
+                                        <p>한국, 일본, 태국 구글플레이 및 애플 앱스토어 <br />
+                                        <span>인기 순위 1위 기록</span>
+                                        </p>
+                                    </div>
                                 </div>     
                             </div>
                             <img className={styles.line_img05} src="/img/road_line05.png" alt="" />

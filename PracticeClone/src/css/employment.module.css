@@ -69,7 +69,7 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 200px;
+    width: 215px;
 }
 
 .employment_menu_group span{
@@ -81,7 +81,7 @@
     content: ">"; 
     position: absolute; 
     top: 153px; 
-    right: 327px;
+    right: 335px;
 
     font-size: 15px;
     color: #666;
@@ -91,7 +91,7 @@
     content: ">"; 
     position: absolute; 
     top: 153px; 
-    right: 260px;
+    right: 262px;
 
     font-size: 15px;
     color: #666;
