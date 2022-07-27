@@ -92,22 +92,30 @@
   background-color: #f3f3f3;
 
   
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  overflow: hidden;
 }
 
 .fulldownNav_in {
-  display: none;
+  opacity: 0;
+  
+  transition: all 0.2s ease-in-out;
 
 }
 
 /* 서브메뉴 내려오는 효과 */
 .fulldownNav.on{
   height: 300px;
+
+  overflow: visible;
 }
 
 /* 서브메뉴 block */
 .fulldownNav_in.act {
-  display: block;
+
+  opacity: 1;
+  /* display: block; */
 }
 
 

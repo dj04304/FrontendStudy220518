@@ -35,18 +35,11 @@ function MainCom() {
             <div>
                 <div>
                     <Slider {...settings}>
-                        <div className={styles.video}>
-                            <video src="/video/Hit2.mp4" autoPlay muted loop></video>
-                        </div>
-                        <div className={styles.video}>
-                            <video src="/video/BlueArchive.mp4" autoPlay muted loop></video>
-                        </div>
-                        <div className={styles.video}>
-                            <video src="/video/ProjectD.mp4" autoPlay muted loop></video>
-                        </div>
-                        <div className={styles.video}>
-                            <video src="/video/ProjectMagnum.mp4" autoPlay muted loop></video>
-                        </div>
+                        <video src="/video/Hit2.mp4" autoPlay muted loop></video>
+                        <video src="/video/BlueArchive.mp4" autoPlay muted loop></video>
+                        <video src="/video/ProjectD.mp4" autoPlay muted loop></video>
+                        <video src="/video/ProjectMagnum.mp4" autoPlay muted loop></video>
+                       
                     </Slider>   
                 </div>
                 <div className={styles.main}>
